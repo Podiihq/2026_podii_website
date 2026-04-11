@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "thumbnail": "/images/projects/prat/prat_thumbnail-02.png",
+    "title": "Management System for Farmers",
+    "theme_color": "#FC8C67",
+    "services": [
+      "UI/UX Design",
+      "fULL STACK DEV",
+      "DB DESIGN",
+      "devops",
+      "Testing and QA",
+      "AI integration"
+    ],
+    "ai_service": [
+      "Coming Soon"
+    ],
+    "project_link": "/project001-prat",
+    "slug": "#",
+    "project_client": "Vibrant Village",
+    "project_status": "2020 - Current",
+    "project_description": "PRAT IS an enterprise resource management system sought to automate the  day-to-day tasks of field officers, addressing the challenges of manual  record-keeping and the growing inefficiency associated with expanding  data sets.",
+    "mobile_screens": [
+      "/images/projects/prat/screens/Mobile-1.png",
+      "/images/projects/prat/screens/Mobile-2.png",
+      "/images/projects/prat/screens/Mobile-3.png",
+      "/images/projects/prat/screens/Mobile-4.png",
+      "/images/projects/prat/screens/Mobile-5.png"
+    ],
+    "desktop_screens": [
+      "/images/projects/prat/screens/Desktop-1.png",
+      "/images/projects/prat/screens/Desktop-2.png",
+      "/images/projects/prat/screens/Desktop-3.png",
+      "/images/projects/prat/screens/Desktop-4.png"
+    ],
+    "problem_statement": [
+      "Organizing data for 20 students in one school is straightforward with a  spreadsheet, but managing over 3000 students across 50 schools requires  automation. Our client faced this challenge, needing to manage a growing dataset for program decisions. To address this, we focused on the data  collection process. Tutors were manually recording student attendance  and performance for years, using a Kobo digital form and booklets.",
+      "Each school had a single tablet for attendance, and transferring session  data to the digital system was labor-intensive. We developed a web  dashboard for efficient data management, including student and teacher  information, and an offline mobile app for real-time attendance and  performance tracking. This improved efficiency and accuracy, benefitting students in the program."
+    ],
+    "project_solution": [
+      "AI models to detect anomalies in transactions",
+      "Real-time monitoring system",
+      "Automated alert & decision workflows",
+      "Legacy system augmentation"
+    ],
+    "project_impact": [
+      "Reduced fraud detection time by 40%",
+      "Automated 90% of manual reviews",
+      "Improved decision accuracy"
+    ]
+  },
+  {
+    "id": 2,
+    "thumbnail": "/images/projects/prat/prat_thumbnail-02.png",
+    "title": "Management Dashboards for Kiwasco",
+    "theme_color": "#44A574",
+    "services": [
+      "UI/UX Design",
+      "fULL STACK DEV",
+      "DB DESIGN",
+      "devops",
+      "Testing and QA",
+      "AI integration"
+    ],
+    "ai_service": [
+      "Coming Soon"
+    ],
+    "project_link": "/project001-kiwasco",
+    "slug": "#",
+    "project_client": "KIWASCO",
+    "project_status": "2025",
+    "project_description": "KIWASCO IS an enterprise resource management system sought to automate the  day-to-day tasks of field officers, addressing the challenges of manual  record-keeping and the growing inefficiency associated with expanding  data sets.",
+    "mobile_screens": [
+      "/images/projects/prat/screens/Mobile-1.png",
+      "/images/projects/prat/screens/Mobile-2.png",
+      "/images/projects/prat/screens/Mobile-3.png",
+      "/images/projects/prat/screens/Mobile-4.png",
+      "/images/projects/prat/screens/Mobile-5.png"
+    ],
+    "desktop_screens": [
+      "/images/projects/prat/screens/Desktop-1.png",
+      "/images/projects/prat/screens/Desktop-2.png",
+      "/images/projects/prat/screens/Desktop-1.png",
+      "/images/projects/prat/screens/Desktop-4.png"
+    ],
+    "problem_statement": [
+      "Organizing data for 20 students in one school is straightforward with a  spreadsheet, but managing over 3000 students across 50 schools requires  automation. Our client faced this challenge, needing to manage a growing dataset for program decisions. To address this, we focused on the data  collection process. Tutors were manually recording student attendance  and performance for years, using a Kobo digital form and booklets.",
+      "Each school had a single tablet for attendance, and transferring session  data to the digital system was labor-intensive. We developed a web  dashboard for efficient data management, including student and teacher  information, and an offline mobile app for real-time attendance and  performance tracking. This improved efficiency and accuracy, benefitting students in the program."
+    ],
+    "project_solution": [
+      "AI models to detect anomalies in transactions",
+      "Real-time monitoring system",
+      "Automated alert & decision workflows",
+      "Legacy system augmentation"
+    ],
+    "project_impact": [
+      "Reduced fraud detection time by 40%",
+      "Automated 90% of manual reviews",
+      "Improved decision accuracy"
+    ]
+  },
+  {
+    "id": 3,
+    "thumbnail": "/images/projects/prat/prat_thumbnail-02.png",
+    "title": "Table Banking System for Villagers",
+    "theme_color": "#EDC343",
+    "services": [
+      "UI/UX Design",
+      "fULL STACK DEV",
+      "DB DESIGN",
+      "devops",
+      "Testing and QA"
+    ],
+    "ai_service": [
+      "Coming Soon"
+    ],
+    "project_link": "#",
+    "slug": "#",
+    "project_client": "VSLA System",
+    "project_status": "2025",
+    "project_description": "VSLA IS an enterprise resource management system sought to automate the  day-to-day tasks of field officers, addressing the challenges of manual  record-keeping and the growing inefficiency associated with expanding  data sets.",
+    "mobile_screens": [],
+    "desktop_screens": [],
+    "problem_statement": [
+      "Organizing data for 20 students in one school is straightforward with a  spreadsheet, but managing over 3000 students across 50 schools requires  automation. Our client faced this challenge, needing to manage a growing dataset for program decisions. To address this, we focused on the data  collection process. Tutors were manually recording student attendance  and performance for years, using a Kobo digital form and booklets.",
+      "Each school had a single tablet for attendance, and transferring session  data to the digital system was labor-intensive. We developed a web  dashboard for efficient data management, including student and teacher  information, and an offline mobile app for real-time attendance and  performance tracking. This improved efficiency and accuracy, benefitting students in the program."
+    ],
+    "project_solution": [
+      "AI models to detect anomalies in transactions",
+      "Real-time monitoring system",
+      "Automated alert & decision workflows",
+      "Legacy system augmentation"
+    ],
+    "project_impact": [
+      "Reduced fraud detection time by 40%",
+      "Automated 90% of manual reviews",
+      "Improved decision accuracy"
+    ]
+  }
+]
