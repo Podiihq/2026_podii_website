@@ -48,7 +48,7 @@ const why_data = [
     title: "Proven Software Engineering Experience",
     description:
       "Nearly a decade of building scalable, reliable systems for startups and enterprise companies.",
-    background: "bg-[#44A574] text-white",
+    background: "bg-[#44A574] text-[#FAF4EC]",
   },
   {
     title: "Long-Term Partnership",

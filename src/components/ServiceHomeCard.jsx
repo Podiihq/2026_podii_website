@@ -66,7 +66,7 @@ export const servicesData = [
     id: 3,
     title: "Intelligent Automation",
     description:
-      "We help businesses automate repetitive tasks, gain actionable insights, and make smarter decisions by integrating AI into existing systems without disrupting what already works.",
+      "You can automate repetitive tasks, uncover actionable insights, and make smarter decisions by integrating AI into your existing systems—without changing what already works.",
     service_link: "/services",
     service_link_title: "Learn More",
     background: "bg-[#EDC343]",
@@ -76,16 +76,16 @@ export const servicesData = [
     id: 2,
     title: "Digital Transformation",
     description:
-      "Many businesses still rely on manual workflows like spreadsheets, paperwork, emails, and disconnected tools. We help you replace these with structured digital systems designed around how your business actually operates.",
+      "You can replace manual workflows like spreadsheets, paperwork, emails, and disconnected tools with structured digital systems—designed around how your business actually operates.",
     service_link: "/services",
     service_link_title: "Learn More",
-    background: "bg-[#44A574] text-white",
+    background: "bg-[#44A574] text-[#FAF4EC]",
   },
   {
     id: 1,
     title: "End-to-End Software Product Development",
     description:
-      "We build complete software systems from idea to launch, covering design, web and mobile development, backend, infrastructure, databases and deployment, so everything works seamlessly together.",
+      "You can turn your idea into a fully functional software system—from design to launch—covering web and mobile development, backend, infrastructure, databases, and deployment, so everything works seamlessly together",
     service_link: "/services",
     service_link_title: "Learn More",
     background: "bg-[#FC8C67]",
