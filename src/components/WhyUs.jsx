@@ -41,7 +41,7 @@ const why_data = [
   {
     title: "We Listen",
     description:
-      "We listen to you and buld exactly what you want.",
+      "We take time to understand your goals and build solutions that truly fit your needs.",
     background: "bg-[#FAF4EC]",
   },
   {
