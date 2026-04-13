@@ -94,6 +94,6 @@ export const nav_link_data = [
   },
   {
     title: "Contact Us",
-    item_link: "#",
+    item_link: "/contact",
   },
 ];

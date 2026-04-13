@@ -24,7 +24,7 @@ const NavBar = () => {
                     </Link>
                     <div className='flex items-center gap-2'>
                         <div className="hidden lg:block ">
-                            <ButtonComponent title="Let's Work" buttonClass="bg-[#FAF4EC]" />
+                            <ButtonComponent button_link="/contact" title="Let's Work" buttonClass="bg-[#FAF4EC]" />
                         </div>
                         <button
                             onClick={openDrawer}
