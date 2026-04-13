@@ -53,7 +53,7 @@ const ServicesPage = () => {
 
                     <div className='flex justify-end pt-10'>
                         <motion.p variants={fadeUp} className="indent-15 lg:indent-60 text-[40px] leading-10 lg:text-[76px] lg:leading-20 lg:w-10/12">
-                            We help businesses run smarter, faster, and more efficiently by creating complete software systems, digital workflows, and AI-powered automation.
+                            We help your business run smarter, faster, and more efficiently by creating complete software systems, digital workflows, and AI-powered automation.
                         </motion.p>
                     </div>
 
