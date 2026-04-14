@@ -143,7 +143,7 @@ const ContactPage = () => {
                     </motion.p>
 
 
-                    <div className='lg:max-w-4xl mx-auto'>
+                    <div className='lg:max-w-4xl mx-auto lg:pt-20'>
                         <form className="" id="contact_form" onSubmit={sendMail}>
                             <div className="py-6">
                                 <div className="flex flex-col gap-5">
@@ -157,7 +157,7 @@ const ContactPage = () => {
                                                 name="userName"
                                                 placeholder="John Doe*"
                                                 autoComplete="given-name"
-                                                className="block w-full border-b py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
+                                                className="block w-full border-b-2 py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
                                                 value={formData.userName}
                                                 onChange={handleChange}
                                             />
@@ -174,7 +174,7 @@ const ContactPage = () => {
                                             id="email"
                                             placeholder="email@email.com*"
                                             autoComplete="given-name"
-                                            className="block w-full border-b py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
+                                            className="block w-full border-b-2 py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
                                             value={formData.email}
                                             onChange={handleChange}
                                             data-text-animation
@@ -191,7 +191,7 @@ const ContactPage = () => {
                                             id="country"
                                             placeholder="Kenya"
                                             autoComplete="given-name"
-                                            className="block w-full border-b py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
+                                            className="block w-full border-b-2 py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
                                             value={formData.country}
                                             onChange={handleChange}
                                             data-text-animation
