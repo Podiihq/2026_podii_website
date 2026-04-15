@@ -51,8 +51,8 @@
   },
   {
     "id": 2,
-    "thumbnail": "/images/projects/prat/prat_thumbnail-02.png",
-    "title": "Management Dashboards for Kiwasco",
+    "thumbnail": "/images/projects/ikuku/ikuku_thumbnail.png",
+    "title": "Digital Platform for Poultry Farmers",
     "theme_color": "#44A574",
     "services": [
       "UI/UX Design",
@@ -67,9 +67,9 @@
     ],
     "project_link": "/project001-kiwasco",
     "slug": "#",
-    "project_client": "KIWASCO",
+    "project_client": "I-Kuku",
     "project_status": "2025",
-    "project_description": "KIWASCO IS an enterprise resource management system sought to automate the  day-to-day tasks of field officers, addressing the challenges of manual  record-keeping and the growing inefficiency associated with expanding  data sets.",
+    "project_description": "",
     "mobile_screens": [
       "/images/projects/prat/screens/Mobile-1.png",
       "/images/projects/prat/screens/Mobile-2.png",
@@ -101,7 +101,7 @@
   },
   {
     "id": 3,
-    "thumbnail": "/images/projects/prat/prat_thumbnail-02.png",
+    "thumbnail": "/images/projects/vsla/vsla_thumbnail.png",
     "title": "Table Banking System for Villagers",
     "theme_color": "#EDC343",
     "services": [

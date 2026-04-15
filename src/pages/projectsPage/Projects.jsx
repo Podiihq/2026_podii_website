@@ -101,7 +101,7 @@ export const ProjectCardComponent = ({
           <div className="w-80 lg:h-50 h-40">
             <ImageComponent
               image={thumbnail}
-              imageClass="w-80 lg:h-50 h-40 object-cover border"
+              imageClass="w-80 lg:h-50 h-40 object-cover border-2"
               skeletonClass="w-80 lg:h-50 h-40 object-cover border"
             />
           </div>
