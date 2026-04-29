@@ -63,7 +63,7 @@ const HomePage = () => {
             variants={hero_container}
             initial="hidden"
             animate="show"
-            className="h-full pt-32 flex flex-col lg:grid lg:grid-cols-6 gap-20 lg:max-w-7xl mx-auto px-4 xl:px-0 relative z-20"
+            className="h-full pt-32 lg:pt-40 flex flex-col lg:grid lg:grid-cols-6 gap-20 lg:max-w-7xl mx-auto px-4 xl:px-0 relative z-20"
           >
             <div className="self-center col-span-3 space-y-4">
               <motion.p

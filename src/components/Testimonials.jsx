@@ -91,11 +91,10 @@ const TestimonialsComponent = () => {
             className="grid grid-cols-1 md:grid-cols-3 border border-[#ccc] border-dashed divide-x divide-y divide-dashed divide-[#ccc]">
             {visibleTestimonies.map((item, index) => (
               <motion.div
-                key={logo.id}
+                key={index}
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.24, delay: index * 0.04, ease: "easeOut" }}
-                key={index}>
+                transition={{ duration: 0.24, delay: index * 0.04, ease: "easeOut" }}>
                 <TestimonialsCard
                   userName={item.userName}
                   role={item.role}
@@ -163,11 +162,4 @@ const testimonial_data = [
       "Working with Sigu and Podii is fantastic. He has the professional  skills. His projects always come in under budget and with good quality,  and interactions are respectful.",
     company_logo: Groxio,
   },
-  {
-    userName: "Bruce Tate",
-    role: " Managing Director, Groxio",
-    description:
-      "Working with Sigu and Podii is fantastic. He has the professional  skills. His projects always come in under budget and with good quality,  and interactions are respectful.",
-    company_logo: Groxio,
-  },
-];
+]
