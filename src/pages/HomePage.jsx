@@ -52,7 +52,7 @@ const HomePage = () => {
   return (
     <InnerPageTransition>
       <div className="bg-[#F5F5F5] text-[#1A1A1A]">
-        <section className="min-h-[80vh] relative">
+        <section className="min-h-[40vh] lg:min-h-[60vh] xl:min-h-[80vh] relative">
           <div className="fixed w-full pt-4 z-100 lg:px-4 xl:px-0">
             <NavBar targetSectionRef={targetSectionRef} />
           </div>
@@ -90,7 +90,7 @@ const HomePage = () => {
             </div>
           </motion.div>
         </section >
-        <div className="relative z-50 md:pt-10">
+        <div className="relative z-50 pt-10 md:pt-10">
           <CompaniesSection />
         </div>
         <section className="lg:max-w-7xl mx-auto pb-10 md:pb-20 px-4 xl:px-0">
@@ -99,7 +99,7 @@ const HomePage = () => {
               Every business eventually hits the same ceiling.
             </h2>
             <div className="grid lg:grid-cols-2 gap-10">
-              <img src={CeilingImage} alt="" className="self-center w-1/2 lg:w-10/12 hidden md:block" />
+              <img src={CeilingImage} alt="" className="self-center w-1/2 lg:w-10/12 hidden lg:block" />
               <div className="space-y-6 ">
                 <p>
                   The business isn’t failing—its systems just haven’t scaled with it. Manual approvals, fragmented tools, and poor integrations are forcing the team to hold everything together. People are working harder than ever, but the real issue lies in the underlying structure, not their effort.

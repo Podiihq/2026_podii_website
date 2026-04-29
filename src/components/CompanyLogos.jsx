@@ -4,7 +4,7 @@ import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
 import { RiArrowLeftUpLine, RiArrowRightUpLine } from "react-icons/ri";
 import { ImageComponent } from "./ImageComponent";
 
-const PAGE_SIZE = 5;
+const PAGE_SIZE = 6;
 
 const logoModules = import.meta.glob("../assets/images/company-logos/*.svg", {
     eager: true,
@@ -63,8 +63,8 @@ const CompaniesSection = () => {
 
     return (
         <section id="companies" className="pb-14 md:pb-16">
-            <div className="mx-auto max-w-7xl">
-                <div className="flex flex-wrap items-center justify-between gap-4 px-4 xl:px-0">
+            <div className="mx-auto max-w-7xl px-4 xl:px-0">
+                <div className="flex flex-wrap items-center justify-between gap-4">
                     <div className="space-y-2">
                         <p className="text-xl uppercase font-bold">Trusted BY</p>
                         <p className="text-xs uppercase tracking-[0.18em] text-[#ccc]">
@@ -92,7 +92,7 @@ const CompaniesSection = () => {
                     </div>
                 </div>
 
-                <div className="relative mt-4 min-h-28 px-4 lg:px-0">
+                <div className="relative mt-4 min-h-28">
                     <AnimatePresence mode="wait" custom={direction}>
                         <motion.div
                             key={startIndex}
@@ -101,7 +101,7 @@ const CompaniesSection = () => {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: direction * -36 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="grid grid-cols-3 gap-2 md:grid-cols-5"
+                            className="grid grid-cols-3 gap-2 md:grid-cols-6"
                         >
                             {visibleLogos.map((logo, index) => (
                                 <motion.article

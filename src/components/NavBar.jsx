@@ -39,7 +39,7 @@ const NavBar = ({ targetSectionRef }) => {
 
     return (
         <section className="relative">
-            <header className="sticky top-0 mx-auto w-full max-w-7xl px-4 md:px-10 lg:px-0">
+            <header className="sticky top-0 mx-auto w-full max-w-7xl px-4 lg:px-0">
                 <div
                     className={`rounded-xs flex items-center gap-4 justify-between pl-4 pr-2 py-2 backdrop-blur transition-all duration-300 
                     ${isInSection ? "text-black bg-[#f5f5f5] border border-[#1a1a1a] border-dashed" : "bg-[#1a1a1a]  text-[#F5F5F5]"}`}>
