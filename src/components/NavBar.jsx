@@ -63,7 +63,7 @@ const NavBar = ({ targetSectionRef }) => {
                     </div>
 
                     <ButtonComponent
-                        buttonClass={`rounded-xs ${isInSection ? "text-[#F5F5F5] bg-[#1a1a1a]" : "bg-[#C8420B] text-[F5F5F5]"}`}
+                        buttonClass={`${isInSection ? "text-[#F5F5F5] bg-[#1a1a1a] border border-white hover:shadow-[4px_4px_0px_black]" : "bg-[#C8420B] text-[F5F5F5] hover:shadow-[4px_4px_0px_white]"}`}
                         title="Let's Work"
                     />
                 </div>

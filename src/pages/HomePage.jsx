@@ -105,11 +105,12 @@ const HomePage = () => {
             </h2>
             <div className="grid lg:grid-cols-2 gap-10">
               <img src={CeilingImage} alt="" className="self-center w-10/12" />
-              <div className="space-y-6">
+              <div className="space-y-6 ">
                 <p>
                   The business isn’t failing—its systems just haven’t scaled with it. Manual approvals, fragmented tools, and poor integrations are forcing the team to hold everything together. People are working harder than ever, but the real issue lies in the underlying structure, not their effort.
                 </p>
-                <div className="flex flex-col border border-[#ccc] border-dashed rounded-xs p-6 relative lg:w-11/12">
+                <div className="flex flex-col border border-[#ccc] border-dashed rounded-xs p-6 relative lg:w-11/12 relative">
+                  <BorderConers />
                   <div className="">
                     <h2 className="mb-6 text-2xl font-bold">
                       Podii exists to redesign that architecture.
@@ -138,7 +139,7 @@ const HomePage = () => {
             <div>
               <ProjectHomeCard />
               <div className="flex justify-end pt-10">
-                <Link to="/projects" className="w-fit ">
+                <Link to="" className="w-fit ">
                   <div className="pt-5">
                     <p className="text-4xl lg:text-[70px] lg:leading-23 underline mango-black uppercase hover:text-[#ccc]">
                       SEE All PROJECTS
