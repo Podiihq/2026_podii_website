@@ -14,7 +14,7 @@ const ProjectHomeCard = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 divide-x divide-[#2B2B2B] divide-dashed border border-dashed border-[#2B2B2B]">
+      <div className="grid grid-cols-3 divide-x divide-[#3D3D3D] divide-dashed border border-dashed border-[#3D3D3D]">
         {projects.slice(0, 3).map((project) => (
           <div key={project.id} className="h-full">
             <ProjectCardComponent

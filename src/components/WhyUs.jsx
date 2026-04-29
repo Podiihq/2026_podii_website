@@ -35,12 +35,12 @@ export default WhyUs;
 export const WhyUsComponent = ({ title, description, background }) => {
   return (
     <div
-      className={`p-6 lg:space-y-4 ${background}`}
+      className={`p-6 lg:space-y-4 ${background} `}
     >
       <p className="text-xl leading-none text-center font-black w-1/2 mx-auto">
         {title}
       </p>
-      <p className="text-center">{description}</p>
+      <p className="text-center w-2/3 mx-auto">{description}</p>
     </div>
   );
 };

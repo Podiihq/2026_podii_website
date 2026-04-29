@@ -14,19 +14,39 @@ const navigation = [
     { label: "Contact", href: "#contact" }
 ];
 
-const NavBar = () => {
-    const [scrolled, setScrolled] = useState(false);
+const NavBar = ({ targetSectionRef }) => {
+    const [isInSection, setIsInSection] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInSection(entry.isIntersecting);
+            },
+            { threshold: 0.1 }
+        );
+
+        if (targetSectionRef.current) {
+            observer.observe(targetSectionRef.current);
+        }
+
+        return () => {
+            if (targetSectionRef.current) {
+                observer.unobserve(targetSectionRef.current);
+            }
+        };
+
+    }, []);
 
     return (
         <section className="relative">
             <header className="sticky top-0 mx-auto w-full max-w-7xl md:px-10 lg:px-0">
                 <div
-                    className={`bg-[#1a1a1a] rounded-xs flex items-center gap-4 justify-between pl-4 pr-2 py-2 backdrop-blur transition-all duration-300 
-                    ${scrolled ? "text-black border border-[#ccc]" : "text-[#F5F5F5]"}`}
+                    className={`rounded-xs flex items-center gap-4 justify-between pl-4 pr-2 py-2 backdrop-blur transition-all duration-300 
+                    ${isInSection ? "text-black bg-[#f5f5f5] border border-[#1a1a1a] border-dashed" : "bg-[#1a1a1a]  text-[#F5F5F5]"}`}
                 >
                     <div className='flex items-center gap-10'>
                         <Link to="" className="">
-                            {scrolled ? <img src={LogoBlack} alt="" className="w-44" /> : <img src={LogoWhite} alt="" className="w-44" />}
+                            {isInSection ? <img src={LogoBlack} alt="" className="w-44" /> : <img src={LogoWhite} alt="" className="w-44" />}
                         </Link>
                         <nav className="hidden items-center gap-6 md:flex">
                             {navigation.map((item) => (
@@ -34,7 +54,7 @@ const NavBar = () => {
                                     key={item.href}
                                     href={item.href}
                                     className={`uppercase transition-colors duration-300 
-                                ${scrolled ? "hover:text-[#1a1a1a]" : "hover:text-gray-900"}`}
+                                ${isInSection ? "hover:text-[#1a1a1a]" : "hover:text-gray-900"}`}
                                 >
                                     {item.label}
                                 </a>
@@ -43,7 +63,7 @@ const NavBar = () => {
                     </div>
 
                     <ButtonComponent
-                        buttonClass={`rounded-xs ${scrolled ? "text-[#F5F5F5] bg-[#1a1a1a]" : "bg-[#C8420B] text-[F5F5F5]"}`}
+                        buttonClass={`rounded-xs ${isInSection ? "text-[#F5F5F5] bg-[#1a1a1a]" : "bg-[#C8420B] text-[F5F5F5]"}`}
                         title="Let's Work"
                     />
                 </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { ButtonComponent } from "../components/ButtonComponent";
 import NavBar from "../components/NavBar";
 import { ImageReelComponent } from "../components/Reels";
@@ -12,7 +12,7 @@ import WhyUs from "../components/WhyUs";
 import TestimonialsComponent from "../components/Testimonials";
 import Footer from "../components/Footer";
 import { InnerPageTransition } from "../components/tile-page-transition/TilePageTransition";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import {
   hero_container,
   fadeUp,
@@ -29,6 +29,13 @@ import CeilingImage from "../assets/images/illustrations/ceiling_illustration.sv
 import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
 
 const HomePage = () => {
+  const targetSectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: targetSectionRef,
+    offset: ["start start", "end end"],
+  });
+
+
   useEffect(() => {
     const lenis = new Lenis();
     function raf(time) {
@@ -50,7 +57,7 @@ const HomePage = () => {
       <div className="bg-[#F5F5F5] text-[#1A1A1A]">
         <section className="h-[80vh] relative">
           <div className="fixed w-full pt-8 z-100">
-            <NavBar />
+            <NavBar targetSectionRef={targetSectionRef} />
           </div>
           <motion.div
             variants={hero_container}
@@ -134,8 +141,7 @@ const HomePage = () => {
         <div className="pb-30">
           <ServicesSection />
         </div>
-
-        <section className="py-20 bg-[#1a1a1a] text-[#f5f5f5]">
+        <section ref={targetSectionRef} className="py-20 bg-[#1a1a1a] text-[#f5f5f5] h-screen">
           <div className="lg:max-w-7xl mx-auto px-4 lg:px-0">
             <p className="uppercase pb-5 text-[#666666]">our work</p>
             <h2 className="text-[130px] leading-26 mango-black uppercase pb-6">
