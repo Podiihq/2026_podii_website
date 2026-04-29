@@ -53,7 +53,7 @@ const NavBar = ({ targetSectionRef }) => {
                                     key={item.href}
                                     href={item.href}
                                     className={`uppercase transition-colors duration-300 
-                                ${isInSection ? "hover:text-[#1a1a1a]" : "hover:text-gray-900"}`}
+                                ${isInSection ? "hover:text-[#1a1a1a]" : "hover:text-[#ccc]"}`}
                                 >
                                     {item.label}
                                 </a>

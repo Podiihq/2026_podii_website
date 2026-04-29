@@ -3,8 +3,6 @@ import { ButtonComponent } from "../components/ButtonComponent";
 import NavBar from "../components/NavBar";
 import { ImageReelComponent } from "../components/Reels";
 import Lenis from "lenis";
-import CompanyLogoMarquee from "../components/CompanyLogoMarquee";
-import ServiceHomeCard from "../components/ServiceHomeCard";
 import { Link } from "react-router";
 import ProjectHomeCard from "../components/ProjectHomeCard";
 import { RiArrowRightUpLine } from "react-icons/ri";
@@ -20,7 +18,6 @@ import {
 import { BsArrowDown } from "react-icons/bs";
 import { BorderConers } from "../components/BorderConers";
 import CompaniesSection from "../components/CompanyLogos";
-import { LaserFlowBoxExample } from "../components/lazer/LaserBox";
 import ServicesSection from "../components/ServicesSection";
 import MeetingIllustration from "../assets/images/illustrations/Workshop.svg"
 
@@ -114,7 +111,7 @@ const HomePage = () => {
                       Podii exists to redesign that architecture.
                     </h2>
                     <p className="mb-4 border-l-2 border-brand-primary pl-3 md:pl-6 leading-relaxed tracking-tight/70">
-                      We work with businesses to map out their current process flows, while identifying bottleknecks and rebuilding their infrastructure from the ground up. We use the right data model, integration architecture and automation logic. Not just a layer on top of broken process
+                      We work with businesses to map out their current process flows, while identifying bottleknecks and rebuilding their infrastructure from the ground up. We use the right data model, integration architecture and automation logic. Not just a layer on top of broken process.
                     </p>
                     <h2 className="indent-3 lg:indent-6 md:text-xl font-bold">
                       Fix the system, not the person.
