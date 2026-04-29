@@ -64,7 +64,7 @@ const CompaniesSection = () => {
     return (
         <section id="companies" className="pb-14 md:pb-16">
             <div className="mx-auto max-w-7xl">
-                <div className="flex flex-wrap items-center justify-between gap-4">
+                <div className="flex flex-wrap items-center justify-between gap-4 px-4 xl:px-0">
                     <div className="space-y-2">
                         <p className="text-xl uppercase font-bold">Trusted BY</p>
                         <p className="text-xs uppercase tracking-[0.18em] text-[#ccc]">
@@ -92,7 +92,7 @@ const CompaniesSection = () => {
                     </div>
                 </div>
 
-                <div className="relative mt-4 min-h-164 sm:min-h-68 lg:min-h-28">
+                <div className="relative mt-4 min-h-28 px-4 lg:px-0">
                     <AnimatePresence mode="wait" custom={direction}>
                         <motion.div
                             key={startIndex}
@@ -101,7 +101,7 @@ const CompaniesSection = () => {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: direction * -36 }}
                             transition={{ duration: 0.3, ease: "easeOut" }}
-                            className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5"
+                            className="grid grid-cols-3 gap-2 md:grid-cols-5"
                         >
                             {visibleLogos.map((logo, index) => (
                                 <motion.article
@@ -115,7 +115,7 @@ const CompaniesSection = () => {
                                         image={logo.source} alt={logo.source}
                                         imageClass="w-full h-full object-contain"
                                         skeletonClass="h-40 w-full"
-                                    // loading="lazy"
+                                        loading="lazy"
                                     />
                                 </motion.article>
                             ))}

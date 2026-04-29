@@ -10,14 +10,14 @@ import LogoFooter from "../assets/images/logo/podii_standard_footer.svg"
 
 const Footer = () => {
   return (
-    <div className="text-[#FAF4EC] lg:max-w-7xl mx-auto overflow-hidden border-x border-b border-[#3D3D3D] border-dashed">
+    <div className="text-[#FAF4EC] lg:max-w-7xl mx-auto md:px-4 xl:px-0 overflow-hidden border-x border-b border-[#3D3D3D] border-dashed">
       <div className="space-y-10">
-        <div className="grid grid-cols-5 divide-x divide-[#3D3D3D] divide-dashed border-b border-[#3D3D3D] border-dashed">
-          <div className="col-span-2 self-center h-full pt-16">
+        <div className="grid grid-cols-2 lg:grid-cols-5 divide-x divide-y divide-[#3D3D3D] divide-dashed border-b border-[#3D3D3D] border-dashed">
+          <div className="lg:col-span-2 self-center h-full pt-16">
             <img src={LogoFooter} alt="" className="w-10/12 mx-auto my-auto" />
           </div>
-          <div className="space-y-2 p-10">
-            <p className="uppercase">
+          <div className="space-y-2 p-3 xl:p-10">
+            <p className="uppercase dotSans-black">
               Website Link
             </p>
             <div>
@@ -28,8 +28,8 @@ const Footer = () => {
               <FooterLink title="Contact Us" link_item="/contact" />
             </div>
           </div>
-          <div className="space-y-2 p-10">
-            <p className="uppercase">
+          <div className="space-y-2 p-3 xl:p-10">
+            <p className="uppercase dotSans-black">
               Social Links
             </p>
             <div>
@@ -38,9 +38,9 @@ const Footer = () => {
               <FooterLink title="Facebook" link_item="#" />
             </div>
           </div>
-          <div className="space-y-2 p-10">
-            <p className="uppercase">Contacts</p>
-            <div className="space-y-2">
+          <div className="space-y-2 p-3 xl:p-10">
+            <p className="uppercase dotSans-black">Contacts</p>
+            <div className="space-y-4">
               <FooterList title="0733 000003" icon={<MdPhone />} />
               <FooterList title="podiihq@gamil.com" icon={<IoMdMail />} />
               <FooterList
@@ -52,7 +52,7 @@ const Footer = () => {
         </div>
 
         <div className="pb-10">
-          <p className="text-center text-[#ccc] text-sm">
+          <p className="text-center text-[#ccc] text-sm px-2">
             © Copyright Podii Consultants 2026 || All Rights Reserved️
           </p>
         </div>
@@ -77,8 +77,10 @@ export const FooterLink = ({ title, link_item }) => {
 
 export const FooterList = ({ title, icon }) => {
   return (
-    <div className="flex items-center gap-2 text-[#ccc]">
-      {icon}
+    <div className="flex items-start gap-2 text-[#ccc]">
+      <div>
+        {icon}
+      </div>
       <p className="leading-none">
         {title}
       </p>

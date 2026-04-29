@@ -3,14 +3,14 @@ import Image1 from "../assets/images/illustrations/choose_us.svg"
 
 const WhyUs = () => {
   return (
-    <div className="grid grid-cols-2 divide-x divide-[#ccc] divide-dashed border-x border-b border-dashed border-[#ccc]">
-      <div className="px-6 pt-30 h-full">
+    <div className="grid lg:grid-cols-2 divide-x divide-[#ccc] divide-dashed border-x border-b border-dashed border-[#ccc]">
+      <div className="px-6 pt-30 h-full hidden lg:block">
         <img src={Image1} alt="" className="" />
       </div>
       <div className="pt-5">
         <div className="space-y-3 p-6">
           <p className="uppercase text-[#666666] text-center">Work with Us</p>
-          <h2 className="text-[130px] leading-26 mango-black uppercase text-center">
+          <h2 className="text-[50px] leading-10 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase text-center">
             why choose us
           </h2>
         </div>
@@ -37,10 +37,10 @@ export const WhyUsComponent = ({ title, description, background }) => {
     <div
       className={`p-6 lg:space-y-4 ${background} `}
     >
-      <p className="text-xl leading-none text-center font-black w-1/2 mx-auto">
+      <p className="text-xl leading-none text-center font-black lg:w-3/4 xl:w-1/2 mx-auto">
         {title}
       </p>
-      <p className="text-center w-2/3 mx-auto">{description}</p>
+      <p className="text-center xl:w-2/3 mx-auto">{description}</p>
     </div>
   );
 };

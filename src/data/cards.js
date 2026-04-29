@@ -37,8 +37,8 @@ export const cards = [
     headingLines: "4] Consultancy",
     description:
       "Uncover the real causes behind operational issues, not just their symptoms. We run a full diagnostic—mapping your processes, identifying bottlenecks and dependencies, and pinpointing root causes—then deliver a clear, prioritised redesign roadmap before any code is written.",
-    moreClass: "col-span-2",
-    flexType: "flex-row gap-10 items-start",
+    moreClass: "lg:col-span-2",
+    flexType: "lg:flex-row lg:gap-10 lg:items-start",
     image_class: "lg:w-250",
     shape: Image4
   },
