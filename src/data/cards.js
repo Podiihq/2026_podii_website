@@ -32,13 +32,14 @@ export const cards = [
     flexType: "flex-col",
     shape: Image3
   },
-  // {
-  //   id: "consultancy",
-  //   headingLines: "Software Consultancy",
-  //   description:
-  //     "You can automate repetitive tasks, uncover actionable insights, and make smarter decisions by integrating AI into your existing systems, without  changing what already works.",
-  //   moreClass: "col-span-2",
-  //   flexType: "flex-row",
-  //   shape: Image4
-  // },
+  {
+    id: "consultancy",
+    headingLines: "4] Consultancy",
+    description:
+      "You can automate repetitive tasks, uncover actionable insights, and make smarter decisions by integrating AI into your existing systems, without  changing what already works.",
+    moreClass: "col-span-2",
+    flexType: "flex-row gap-10 items-start",
+    image_class: "w-150",
+    shape: Image4
+  },
 ];

@@ -74,16 +74,16 @@ const CompaniesSection = () => {
                     <div className="flex items-center gap-2">
                         <div
                             onClick={goPrevious}
-                            className="cursor-pointer flex gap-2 items-center border border-[#ccc] pl-2 pr-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase"
+                            className="cursor-pointer flex gap-2 items-center border border-dashed border-[#ccc] pl-2 pr-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase"
                             disabled={!canPaginate}
                         >
 
                             <IoChevronBackSharp className='text-xl' />
-                            Previous
+                            Prev
                         </div>
                         <div
                             onClick={goNext}
-                            className="cursor-pointer flex gap-2 items-center border border-[#ccc] pr-2 pl-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase"
+                            className="cursor-pointer flex gap-2 items-center border border-dashed border-[#ccc] pr-2 pl-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase"
                             disabled={!canPaginate}
                         >
                             Next

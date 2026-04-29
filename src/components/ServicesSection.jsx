@@ -9,7 +9,7 @@ const ServicesSection = () => (
     <div className="mx-auto lg:max-w-screen-2xl">
       <p className="text-center uppercase pb-5 text-[#666666]">Our Services</p>
       <h2 className="text-[130px] leading-26 mango-black uppercase pb-6 text-center">
-        What We Do, Everyday.
+        What We Can Do, For You.
       </h2>
     </div>
     <div className="mx-auto mt-10 lg:max-w-7xl bg-brand-neutral relative">
@@ -18,29 +18,6 @@ const ServicesSection = () => (
           <FeatureCard key={card.id} card={card} />
         ))}
       </div>
-      <section className="mt-4 relative flex border border-[#ccc] border-dashed flex-col p-6 md:p-7">
-        <BorderConers />
-        <div className="relative z-10 flex h-full items-end">
-          <div className="mt-4">
-            <h2 className="mb-6 text-2xl font-black">
-              4] Software Consultancy
-            </h2>
-            <p className="mb-6 border-l-2 pl-3 w-10/12">
-              You can uncover the real causes behind operational issues, not just their symptoms. We run a full diagnostic—mapping your processes, identifying bottlenecks and dependencies, and pinpointing root causes—then deliver a clear, prioritised redesign roadmap before any code is written.
-            </p>
-            <div className="w-fit">
-              <Link to="#"
-                className="uppercase tracking-widest underline hover:text-[#ccc]"
-              >
-                Learn More
-              </Link>
-            </div>
-          </div>
-          <div className="">
-            <img src={Image1} alt="" className="mx-auto w-140" />
-          </div>
-        </div>
-      </section>
     </div>
   </section>
 );
@@ -63,9 +40,9 @@ const FeatureCard = ({ card }) => {
   return (
     <section className={`relative flex border border-[#ccc] border-dashed flex-col p-6 md:p-7 ${card.moreClass}`}>
       <BorderConers />
-      <div className={`relative z-10 flex h-full flex-col ${card.flexType}`}>
+      <div className={`relative z-10 h-full flex flex-col ${card.flexType}`}>
         <div className="">
-          <img src={card.shape} alt="" className="mx-auto h-full" />
+          <img src={card.shape} alt="" className={`mx-auto h-full ${card.image_class}`} />
         </div>
         <div className="mt-4">
           <h2 className="mb-6 text-2xl font-black">
@@ -74,6 +51,7 @@ const FeatureCard = ({ card }) => {
           <p className="mb-6 border-l-2 pl-3">
             {card.description}
           </p>
+          <div className="flex-1" />
           <div className="w-fit">
             <Link to="#"
               className="uppercase tracking-widest underline hover:text-[#ccc]"
@@ -82,6 +60,7 @@ const FeatureCard = ({ card }) => {
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );

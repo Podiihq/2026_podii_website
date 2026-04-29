@@ -56,7 +56,7 @@ const HomePage = () => {
     <InnerPageTransition>
       <div className="bg-[#F5F5F5] text-[#1A1A1A]">
         <section className="h-[80vh] relative">
-          <div className="fixed w-full pt-8 z-100">
+          <div className="fixed w-full pt-4 z-100">
             <NavBar targetSectionRef={targetSectionRef} />
           </div>
           <motion.div
@@ -76,26 +76,14 @@ const HomePage = () => {
               <motion.p className="lg:w-10/12" variants={fadeUp}>
                 We’re is the consultancy that diagnoses what is broken and builds what replaces it, so businesses can scale without the manual dependencies that cap their capacity.
               </motion.p>
-              <div className="w-fit">
-                <ButtonComponent
-                  buttonClass="rounded-xs bg-[#C8420B] text-[#F5F5F5] w-fit"
-                  title="Let's Work"
-                />
-              </div>
-              <div className="flex items-center gap-5 border border-[#ccc] border-dashed w-fit mt-10">
-                <div className="p-4">
-                  <p className="text-3xl font-bold">KSH 10M</p>
-                  <p className="text-[#666666]">Revenue Recovered</p>
-                </div>
-                <div className="w-px h-20 bg-[#E8E8E8]" />
-                <div className="p-4">
-                  <p className="text-3xl font-bold">50, 000+</p>
-                  <p className="text-[#666666]">Lives Impacted</p>
-                </div>
-                <div className="w-px h-20 bg-[#E8E8E8]" />
-                <div className="p-4">
-                  <p className="text-3xl font-bold">25+</p>
-                  <p className="text-[#666666]">Built & Deployed</p>
+              <div className="group cursor-pointer flex items-center gap-5 border border-[#ccc] hover:bg-[#1a1a1a] border-dashed w-fit mt-5">
+                <div className="px-4 py-3">
+                  <p className="text-[#666666] group-hover:text-[#f5f5f5]">See how we  <span className="uppercase font-bold text-[#038585] group-hover:text-[#C8420B]">Recovered more than</span></p>
+                  <div className="w-full flex justify-between items-end">
+                    <p className="text-5xl dotSans-black text-[#038585] group-hover:text-[#C8420B] leading-none">KSH 10M</p>
+                    <RiArrowRightUpLine className='text-2xl text-[#038585] group-hover:text-[#C8420B]' />
+                  </div>
+                  <p className="text-[#666666] group-hover:text-[#f5f5f5]">for KIWASCO within a year.</p>
                 </div>
               </div>
             </div>

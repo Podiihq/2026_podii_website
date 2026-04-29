@@ -98,7 +98,7 @@ export const ProjectCardComponent = ({
 }) => {
   return (
     <Link to={project_link} className="cursor-pointer ">
-      <motion.div className="w-full h-full flex items-start group hover:bg-[#E8E8E8] hover:text-[#1a1a1a] p-8 rounded-xs">
+      <motion.div className="w-full h-full flex items-start group hover:bg-[#E8E8E8] hover:text-[#1a1a1a] p-8">
         <motion.div className="flex flex-col h-full">
           <div className="w-full lg:h-25 h-20">
             <ImageComponent
