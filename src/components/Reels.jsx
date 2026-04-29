@@ -9,7 +9,7 @@ const ImageReel = ({ images, imageClass, loadingClass }) => {
     useEffect(() => {
         const intervalId = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 1000);
+        }, 2000);
         return () => clearInterval(intervalId);
     }, [images]);
 
@@ -32,23 +32,29 @@ export default ImageReel;
 import Reel1 from "../assets/images/projects/ikuku/ikuku_thumb.png"
 import Reel2 from "../assets/images/projects/paza/paza-thumb.png"
 import Reel3 from "../assets/images/projects/prat/PRAT-thumb.png"
+import Reel4 from "/images/projects/vsla/vsla_thumbnail.png"
+import Reel5 from "/images/thumbs/vsla-home-thumb.png"
+import Reel6 from "/images/thumbs/prat-home-thumb.png"
+import Reel7 from "/images/thumbs/ikuku-home-thumb.png"
+import { BorderConers } from './BorderConers';
 
 
 export const reelImages = [
-    Reel1, Reel2, Reel3
+    Reel5, Reel6, Reel7
 ]
 
 
 
 export function ImageReelComponent() {
     return (
-        <div className='w-70 h-50 lg:w-145 lg:h-95 relative'>
+        <div className='w-70 h-50 lg:w-full lg:h-95 relative'>
             <ImageReel
                 images={reelImages}
-                imageClass="border-2 lg:border-4 rounded w-70 h-50 lg:w-145 lg:h-95 object-cover"
-                skeletonClass="border-2 lg:border-4 rounded-lg w-70 h-50 lg:w-145 lg:h-95"
-                loadingClass="lg:w-145 lg:h-95 w-70 h-50 border-2 lg:border-4 rounded-lg"
+                imageClass="w-full h-50 lg:w-full lg:h-95 object-cover object-top"
+                skeletonClass="border-2 border-[#038585] w-70 h-50 lg:w-145 lg:h-95"
+                loadingClass="lg:w-145 border-[#038585] lg:h-95 w-70 h-50 border-2"
             />
+            {/* <BorderConers /> */}
         </div>
     );
 }

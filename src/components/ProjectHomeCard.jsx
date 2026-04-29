@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ProjectCardComponent } from "../pages/projectsPage/Projects";
+import { BorderConers } from "./BorderConers";
 
 const ProjectHomeCard = () => {
   const [projects, setProjects] = useState([]);
@@ -13,19 +14,18 @@ const ProjectHomeCard = () => {
 
   return (
     <div>
-      <div className="">
-        {projects.slice(0, 5).map((project) => (
-          <div key={project.id} className="relative border-b border-[#E1E1E1] group py-5">
+      <div className="grid grid-cols-3 divide-x divide-[#2B2B2B] divide-dashed border border-dashed border-[#2B2B2B]">
+        {projects.slice(0, 3).map((project) => (
+          <div key={project.id} className="h-full">
             <ProjectCardComponent
               id={project.id}
               thumbnail={project.thumbnail}
               title={project.title}
-              ai_service={project.ai_service}
-              project_link={`/projects/${project.slug}`}
-            />
-            <span className="absolute left-0 bottom-0 h-0.5 w-full bg-black
-                             scale-x-0 origin-left transition-transform duration-600 ease-in-out
-                             group-hover:scale-x-100 group-hover:origin-left"
+              project_status={project.project_status}
+              project_link={"#"}
+              project_category={project.project_category}
+              project_description={project.project_description}
+            // project_link={`/projects/${project.slug}`}
             />
           </div>
         ))}

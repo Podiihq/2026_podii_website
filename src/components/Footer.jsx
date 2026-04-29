@@ -6,51 +6,40 @@ import { IoMdMail } from "react-icons/io";
 import { IoLocation } from "react-icons/io5";
 import { ButtonComponent } from "./ButtonComponent";
 import { RiArrowRightUpLine } from "react-icons/ri";
+import LogoFooter from "../assets/images/logo/podii_standard_footer.svg"
 
 const Footer = () => {
   return (
-    <div className="p-6 lg:p-16 bg-[#1e1e1e] text-[#FAF4EC] lg:max-w-screen-2xl mx-auto rounded border-2 overflow-hidden">
-      <div className="space-y-10 lg:space-y-30">
-        <div className="flex gap-10 lg:gap-30 w-full flex-wrap">
-          <div className="space-y-2">
-            <div className="flex gap-1 text-[#FC8C67] underline">
-              <p className="uppercase helvetica-medium text-3xl">
-                Website Link
-              </p>
-              <p className="uppercase helvetica-medium text-lg leading-none">
-                4
-              </p>
-            </div>
+    <div className="text-[#FAF4EC] lg:max-w-7xl mx-auto overflow-hidden border-x border-b border-[#3D3D3D] border-dashed">
+      <div className="space-y-10">
+        <div className="grid grid-cols-5 divide-x divide-[#3D3D3D] divide-dashed border-b border-[#3D3D3D] border-dashed">
+          <div className="col-span-2 self-center">
+            <img src={LogoFooter} alt="" className="w-10/12 mx-auto" />
+          </div>
+          <div className="space-y-2 p-10">
+            <p className="uppercase">
+              Website Link
+            </p>
             <div>
               <FooterLink title="Home" link_item="/" />
               <FooterLink title="Services" link_item="/services" />
               <FooterLink title="Our Work" link_item="/projects" />
-              {/* <FooterLink title="About Us" link_item="#" /> */}
+              <FooterLink title="About Us" link_item="#" />
               <FooterLink title="Contact Us" link_item="/contact" />
             </div>
           </div>
-          <div className="space-y-2">
-            <div className="flex gap-1 text-[#FC8C67] underline">
-              <p className="uppercase helvetica-medium text-3xl">
-                Social Links
-              </p>
-              <p className="uppercase helvetica-medium text-lg leading-none">
-                3
-              </p>
-            </div>
+          <div className="space-y-2 p-10">
+            <p className="uppercase">
+              Social Links
+            </p>
             <div>
-              <FooterLink title="x (tWITTER)" link_item="#" />
+              <FooterLink title="X (Twitter)" link_item="#" />
               <FooterLink title="linkedin" link_item="#" />
-              <FooterLink title="privacy policy" link_item="#" />
+              <FooterLink title="Facebook" link_item="#" />
             </div>
           </div>
-          <div className="space-y-2 col-span-2 ">
-            <div className="flex gap-1 text-[#FC8C67] underline">
-              <p className="uppercase helvetica-medium text-3xl">Contacts</p>
-              <p className="uppercase helvetica-medium text-lg leading-none">
-                3
-              </p>
-            </div>
+          <div className="space-y-2 p-10">
+            <p className="uppercase">Contacts</p>
             <div className="space-y-2">
               <FooterList title="0733 000003" icon={<MdPhone />} />
               <FooterList title="podiihq@gamil.com" icon={<IoMdMail />} />
@@ -62,26 +51,10 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex justify-between flex-wrap">
-          <div className="space-y-4">
-            <p className="text-4xl lg:text-7xl leading-none hidden lg:block">
-              Let’s Build Something <br /> Smarter Together.
-            </p>
-            <div className="">
-              <FooterButtonComponent title="work with us" />
-            </div>
-            <p className="text-xl">
-              © Copyright Podii Consultants 2026 || All Rights Reserved️
-            </p>
-          </div>
-          <div className="pt-20 lg:pt-32 xl:pt-0">
-            <p
-              // style={{ WebkitTextStroke: "2px #FFFFFF" }}
-              className="text-[250px] leading-40 lg:text-[550px] lg:leading-75"
-            >
-              PODII
-            </p>
-          </div>
+        <div className="pb-10">
+          <p className="text-center text-[#ccc] text-sm">
+            © Copyright Podii Consultants 2026 || All Rights Reserved️
+          </p>
         </div>
       </div>
     </div>
@@ -92,9 +65,9 @@ export default Footer;
 
 export const FooterLink = ({ title, link_item }) => {
   return (
-    <Link to={link_item} className="custom-cursor">
+    <Link to={link_item} className="">
       <div className="flex items-start gap-1 py-1">
-        <p className="uppercase hover:underline text-[40px] lg:text-[63px] leading-none hover:text-[#FAF4EC]">
+        <p className="hover:underline hover:text-[#FAF4EC] text-[#ccc]">
           {title}
         </p>
       </div>
@@ -104,9 +77,9 @@ export const FooterLink = ({ title, link_item }) => {
 
 export const FooterList = ({ title, icon }) => {
   return (
-    <div className="flex items-center gap-2 text-2xl">
+    <div className="flex items-center gap-2 text-[#ccc]">
       {icon}
-      <p className="text-[40px] lg:text-[63px] leading-none uppercase">
+      <p className="leading-none">
         {title}
       </p>
     </div>

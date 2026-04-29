@@ -48,7 +48,7 @@ const Projects = () => {
           variants={hero_container}
           initial="hidden"
           animate="show"
-          className="lg:max-w-screen-2xl mx-auto px-4 pt-40 pb-20">
+          className="lg:max-w-7xl mx-auto px-4 pt-40 pb-20">
           <div className="flex gap-4">
             <motion.p
               variants={fadeUp}
@@ -91,34 +91,34 @@ export const ProjectCardComponent = ({
   id,
   thumbnail,
   title,
-  ai_service,
+  project_status,
   project_link,
+  project_category,
+  project_description
 }) => {
   return (
-    <Link to={project_link} className="custom-cursor">
-      <motion.div className="w-full h-full flex items-start group">
-        <motion.div className="lg:py-4 flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10 group-hover:px-10 duration-300">
-          <div className="w-80 lg:h-50 h-40">
+    <Link to={project_link} className="cursor-pointer ">
+      <motion.div className="w-full h-full flex items-start group hover:bg-[#E8E8E8] hover:text-[#1a1a1a] p-8 rounded-xs">
+        <motion.div className="flex flex-col h-full">
+          <div className="w-full lg:h-25 h-20">
             <ImageComponent
               image={thumbnail}
-              imageClass="w-80 lg:h-50 h-40 object-cover border-2"
-              skeletonClass="w-80 lg:h-50 h-40 object-cover border"
+              imageClass="w-full lg:h-25 h-20 object-cover object-top"
+              skeletonClass="w-40 lg:h-25 h-20 object-cover border"
             />
           </div>
-          <div className="">
-            <p className="capitalize xl:w-10/12 text-[50px] leading-12 lg:text-[80px] lg:leading-18 xl:text-[100px] xl:leading-20 group-hover:opacity-50">
+          <div className="space-y-4 pt-4">
+            <p className="uppercase ">{project_category}</p>
+            <p className="capitalize text-3xl">
               {title}
             </p>
-            <div className="flex gap-2 lg:gap-4">
-              {ai_service.map((item, index) => (
-                <div key={index} className="flex gap-1 items-center">
-                  <div className="w-2 h-2 bg-[#FC8C67] hidden lg:block" />
-                  <p className="tracking-wide uppercase border-[#323232] rounded-full text-2xl lg:text-[32px] leading-5 text-[#FC8C67]">
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <p className="">{project_description}</p>
+          </div>
+          <div className="flex-1" />
+          <div className="flex gap-2 lg:gap-4 pt-4">
+            <p className="tracking-wide uppercase text-sm border-[#323232] rounded-full text-[#C8420B] underline">
+              {project_status}
+            </p>
           </div>
         </motion.div>
       </motion.div>

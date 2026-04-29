@@ -18,6 +18,15 @@ import {
   fadeUp,
 } from "../components/animations/heroAnimations";
 import { BsArrowDown } from "react-icons/bs";
+import { BorderConers } from "../components/BorderConers";
+import CompaniesSection from "../components/CompanyLogos";
+import { LaserFlowBoxExample } from "../components/lazer/LaserBox";
+import ServicesSection from "../components/ServicesSection";
+import MeetingIllustration from "../assets/images/illustrations/Workshop.svg"
+
+import HeroImage from "../assets/images/illustrations/hero-illustration.svg"
+import CeilingImage from "../assets/images/illustrations/ceiling_illustration.svg"
+import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
 
 const HomePage = () => {
   useEffect(() => {
@@ -38,134 +47,108 @@ const HomePage = () => {
 
   return (
     <InnerPageTransition>
-      <div className="bg-[#FAF4EC] text-[#181818]">
-        <section className="h-screen">
-          <div className="fixed w-full z-20">
+      <div className="bg-[#F5F5F5] text-[#1A1A1A]">
+        <section className="h-[80vh] relative">
+          <div className="fixed w-full pt-8 z-100">
             <NavBar />
           </div>
           <motion.div
             variants={hero_container}
             initial="hidden"
             animate="show"
-            className="h-full grid xl:grid-cols-2 gap-20 lg:max-w-screen-2xl mx-auto px-4"
+            className="h-full grid lg:grid-cols-6 gap-20 lg:max-w-7xl mx-auto px-4 lg:px-0 relative z-20"
           >
-            <div className="flex flex-col pt-32">
-              <div className="flex-1" />
-              <div>
-                <motion.p
-                  variants={fadeUp}
-                  className="text-[100px] leading-20 lg:text-[225px] lg:leading-45"
-                >
-                  We Build
-                </motion.p>
-                <motion.p
-                  variants={fadeUp}
-                  className="text-[100px] leading-20 lg:text-[225px] lg:leading-45"
-                // style={{ WebkitTextStroke: "1px black" }}
-                >
-                  Intelligent
-                </motion.p>
-                <motion.p
-                  variants={fadeUp}
-                  className="text-[100px] leading-20 lg:text-[225px] lg:leading-45"
-                >
-                  Systems.
-                </motion.p>
+            <div className="self-center col-span-3 space-y-4 pt-32">
+              <motion.p
+                variants={fadeUp}
+                className="text-[130px] leading-26 mango-black uppercase"
+              >
+                The bottleneck is always human.
+                That’s a design problem.
+              </motion.p>
+              <motion.p className="lg:w-10/12" variants={fadeUp}>
+                We’re is the consultancy that diagnoses what is broken and builds what replaces it, so businesses can scale without the manual dependencies that cap their capacity.
+              </motion.p>
+              <div className="w-fit">
+                <ButtonComponent
+                  buttonClass="rounded-xs bg-[#C8420B] text-[#F5F5F5] w-fit"
+                  title="Let's Work"
+                />
+              </div>
+              <div className="flex items-center gap-5 border border-[#ccc] border-dashed w-fit mt-10">
+                <div className="p-4">
+                  <p className="text-3xl font-bold">KSH 10M</p>
+                  <p className="text-[#666666]">Revenue Recovered</p>
+                </div>
+                <div className="w-px h-20 bg-[#E8E8E8]" />
+                <div className="p-4">
+                  <p className="text-3xl font-bold">50, 000+</p>
+                  <p className="text-[#666666]">Lives Impacted</p>
+                </div>
+                <div className="w-px h-20 bg-[#E8E8E8]" />
+                <div className="p-4">
+                  <p className="text-3xl font-bold">25+</p>
+                  <p className="text-[#666666]">Built & Deployed</p>
+                </div>
               </div>
             </div>
-            <div className="pb-5 lg:pb-10 h-full flex flex-col">
-              <div className="flex-1" />
-              <motion.div variants={fadeUp} className="flex lg:justify-end">
-                <div className="flex justify-between items-end w-full lg:w-auto">
-                  <div className="flex flex-col items-center lg:hidden">
-                    <p className="text-lg leading-none">Scroll</p>
-                    <BsArrowDown className="text-xl" />
-                  </div>
-                  <ImageReelComponent />
-                </div>
-              </motion.div>
+            <div className="self-center flex justify-end col-span-3">
+              <img src={HeroImage} alt="" className="w-full" />
             </div>
           </motion.div>
-        </section>
+        </section >
 
-        <section className="pt-20 lg:pt-40">
-          <div className="lg:max-w-screen-2xl mx-auto px-4 space-y-10">
-            <p className="indent-15 lg:indent-60 text-[40px] leading-10 lg:text-[76px] lg:leading-20">
-              For nearly a <span className="text-[#FC8C67]">decade</span>, we’ve {" "}
-              <span className="text-[#FC8C67]">designed, built, scaled, and automated systems</span> for established Corporate and startups alike,
-              helping unlock insights and streamline operations with {" "}
-              <span className="text-[#FC8C67]">Artificial Intelligence.</span>
-            </p>
-            <div className="flex gap-3 lg:gap-5 justify-center flex-wrap">
-              <ButtonComponent
-                title="See What We Can Do"
-                button_link="/services"
-                buttonClass="text-[40px] lg:text-5xl pl-6 pr-5 pt-5"
-              />
-              <ButtonComponent
-                title="See What we've done"
-                button_link="/projects"
-                buttonClass="text-[40px] lg:text-5xl pl-6 pr-5 pt-5"
-              />
-            </div>
-          </div>
-        </section>
 
-        <section className="py-20 lg:py-40">
-          <div className="space-y-4">
-            <p className="text-center text-[40px] lg:text-[76px] lg:leading-20">
-              Trusted By
-            </p>
-            <CompanyLogoMarquee />
-          </div>
-        </section>
+        <div className="relative z-50 pt-10">
+          <CompaniesSection />
+        </div>
 
-        <section className="pb-10">
-          <div className="lg:max-w-screen-2xl mx-auto px-4 space-y-20">
-            <div className="space-y-4">
-              <div className="space-y-3">
-                <p className="lg:text-xl uppercase text-[#44A574] helvetica-bold">
-                  Services
+        <section className="lg:max-w-7xl mx-auto pb-20">
+          <div className="border border-[#ccc] border-dashed p-10">
+            <h2 className="text-[130px] leading-26 mango-black uppercase pb-6">
+              Every business eventually hits the same ceiling.
+            </h2>
+            <div className="grid lg:grid-cols-2 gap-10">
+              <img src={CeilingImage} alt="" className="self-center w-10/12" />
+              <div className="space-y-6">
+                <p>
+                  The business isn’t failing—its systems just haven’t scaled with it. Manual approvals, fragmented tools, and poor integrations are forcing the team to hold everything together. People are working harder than ever, but the real issue lies in the underlying structure, not their effort.
                 </p>
-                <p className="text-[70px] leading-15 lg:text-[155px] lg:leading-34 ">
-                  What We Do
-                </p>
-              </div>
-              <ServiceHomeCard />
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 lg:py-32">
-          <div className="lg:max-w-screen-2xl mx-auto px-4">
-            <div className="flex items-end justify-between gap-4 pb-5 lg:pb-10 flex-wrap">
-              <div className="space-y-3">
-                <p className="lg:text-xl uppercase text-[#44A574] helvetica-bold">
-                  Our Work
-                </p>
-                <p className="text-[70px] leading-15 lg:text-[155px] lg:leading-34 ">
-                  portfolio
-                </p>
-              </div>
-              <Link to="/projects" className="hidden lg:block custom-cursor">
-                <div className="flex items-center hover:text-[#44A574]">
-                  <p className="lg:text-[70px] leading-23 underline">
-                    All PROJECTS
-                  </p>
-                  <RiArrowRightUpLine className="text-5xl" />
-                </div>
-              </Link>
-            </div>
-            <div>
-              <div className="border-b border-[#E1E1E1]" />
-              <ProjectHomeCard />
-              <div className="w-fit">
-                <Link to="/projects" className="custom-cursor">
-                  <div className="flex items-center hover:text-[#44A574] pt-5">
-                    <p className="text-4xl lg:text-[70px] lg:leading-23 underline">
-                      Explore All PROJECTS
+                <div className="flex flex-col border border-[#ccc] border-dashed rounded-xs p-6 relative lg:w-11/12">
+                  <div className="">
+                    <h2 className="mb-6 text-2xl font-bold">
+                      Podii exists to redesign that architecture.
+                    </h2>
+                    <p className="mb-4 border-l-2 border-brand-primary pl-6 leading-relaxed tracking-tight/70">
+                      We work with businesses to map out their current process flows, while identifying bottleknecks and rebuilding their infrastructure from the ground up. We use the right data model, integration architecture and automation logic. Not just a layer on top of broken process
                     </p>
-                    <RiArrowRightUpLine className="text-2xl lg:text-5xl" />
+                    <h2 className="indent-6 text-xl font-bold">
+                      Fix the system, not the person.
+                    </h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="pb-30">
+          <ServicesSection />
+        </div>
+
+        <section className="py-20 bg-[#1a1a1a] text-[#f5f5f5]">
+          <div className="lg:max-w-7xl mx-auto px-4 lg:px-0">
+            <p className="uppercase pb-5 text-[#666666]">our work</p>
+            <h2 className="text-[130px] leading-26 mango-black uppercase pb-6">
+              what we’ve done
+            </h2>
+            <div>
+              <ProjectHomeCard />
+              <div className="flex justify-end pt-10">
+                <Link to="/projects" className="w-fit ">
+                  <div className="pt-5">
+                    <p className="text-4xl lg:text-[70px] lg:leading-23 underline mango-black uppercase hover:text-[#ccc]">
+                      SEE All PROJECTS
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -173,38 +156,43 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="py-10">
-          <div className="lg:max-w-screen-2xl mx-auto px-4 space-y-6">
-            <div className="space-y-3">
-              <p className="text-[32px] leading-6 lg:text-[46px] lg:leading-10 uppercase text-[#44A574] text-center">
-                work with us
-              </p>
-              <p className="text-[70px] leading-15 lg:text-[155px] lg:leading-34 text-center">
-                why choose us?
-              </p>
-            </div>
+        <section className="pb-10">
+          <div className="lg:max-w-7xl mx-auto px-4 lg:px-0">
             <WhyUs />
           </div>
         </section>
 
-        <section className="py-20 lg:py-32">
-          <div>
-            <div className="space-y-3">
-              <p className="text-[32px] leading-6 lg:text-[46px] lg:leading-10 uppercase text-center">
-                Hear from our clients
-              </p>
+        <section className="py-20">
+          <div className="lg:max-w-7xl mx-auto">
+            <div className="flex justify-between items-center">
+              <div className="space-y-3">
+                <p className="uppercase text-[#666666]">Testimonials</p>
+                <h2 className="text-[130px] leading-26 mango-black uppercase pb-6">
+                  Hear from our clients
+                </h2>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="cursor-pointer flex gap-2 items-center border border-[#ccc] pl-2 pr-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase">
+                  <IoChevronBackSharp className='text-xl' />
+                  Prev
+                </div>
+                <div className="cursor-pointer flex gap-2 items-center border border-[#ccc] pr-2 pl-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase">
+                  Next
+                  <IoChevronForwardSharp className='text-xl' />
+                </div>
+              </div>
             </div>
+
             <div className="space-y-4">
               <TestimonialsComponent />
-              {/* <CompanyLogoMarquee /> */}
             </div>
           </div>
         </section>
-        <section className="pb-1 xl:pb-10">
+        <section className="pb-1 xl:pb-10 bg-[#1e1e1e]">
           <Footer />
         </section>
-      </div>
-    </InnerPageTransition>
+      </div >
+    </InnerPageTransition >
   );
 };
 

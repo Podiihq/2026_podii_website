@@ -96,9 +96,9 @@ export const ServicesPageCard = ({ id, title, description, service_items, servic
                             <p key={index} className='helvetica-regular lg:text-xl'>{item}</p>
                         ))}
                     </div>
-                    {/* {service_items && (
+                    {service_items && (
                         <div className='space-y-3'>
-                            <p className='text-3xl lg:text-[40px] lg:leading-10'>What we do</p>
+                            <p className='text-3xl lg:text-[40px] lg:leading-10'>How we do it</p>
                             <div className='grid lg:grid-cols-2 gap-1'>
                                 {service_items.map((item, index) => (
                                     <div key={index} className='space-y-2 border border-[#ccc] p-4'>
@@ -117,7 +117,7 @@ export const ServicesPageCard = ({ id, title, description, service_items, servic
                                 ))}
                             </div>
                         </div>
-                    )} */}
+                    )}
 
                     {service_outcome && (
                         <div className='pt-6'>

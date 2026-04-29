@@ -21,19 +21,22 @@
     font-style: normal;
 }
 
-body {
-    cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b239d7aeb290a31ac5_cursor-default%402x.svg") 2 0,
-        auto;
+@font-face {
+    font-family: "DotSans";
+    src: url("./assets/fonts/42dotSans/42dotSans-Regular.woff2") format("woff2");
+    font-display: swap;
+    font-style: normal;
 }
 
-
-.custom-cursor {
-    cursor: url("https://cdn.prod.website-files.com/6708f85ff3d3cba6aff436fb/671251b212e6b71494aa67ff_cursor-pointer%402x.svg") 12 0,
-        pointer;
+@font-face {
+    font-family: "MangoGrotesque";
+    src: url("./assets/fonts/MangoGrotesque/MangoGrotesque-Black.woff2") format("woff2");
+    font-display: swap;
+    font-style: normal;
 }
 
 * {
-    font-family: Rockids;
+    font-family: DotSans;
 }
 
 .rockids-font {
@@ -46,6 +49,10 @@ body {
 
 .helvetica-bold {
     font-family: Helvetica-Bold;
+}
+
+.mango-black {
+    font-family: MangoGrotesque;
 }
 
 .text-stroke {
