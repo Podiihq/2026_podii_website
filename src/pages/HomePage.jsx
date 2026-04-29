@@ -105,7 +105,6 @@ const HomePage = () => {
           </motion.div>
         </section >
 
-
         <div className="relative z-50 pt-10">
           <CompaniesSection />
         </div>
@@ -141,7 +140,7 @@ const HomePage = () => {
         <div className="pb-30">
           <ServicesSection />
         </div>
-        <section ref={targetSectionRef} className="py-20 bg-[#1a1a1a] text-[#f5f5f5] h-screen">
+        <section ref={targetSectionRef} className="py-20 bg-[#1a1a1a] text-[#f5f5f5]">
           <div className="lg:max-w-7xl mx-auto px-4 lg:px-0">
             <p className="uppercase pb-5 text-[#666666]">our work</p>
             <h2 className="text-[130px] leading-26 mango-black uppercase pb-6">
@@ -168,7 +167,7 @@ const HomePage = () => {
           </div>
         </section>
 
-        <section className="py-20">
+        <section className="pb-10">
           <div className="lg:max-w-7xl mx-auto">
             <div className="flex justify-between items-center">
               <div className="space-y-3">
@@ -189,7 +188,7 @@ const HomePage = () => {
               </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 pb-10">
               <TestimonialsComponent />
             </div>
           </div>

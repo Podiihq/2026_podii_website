@@ -13,8 +13,8 @@ const Footer = () => {
     <div className="text-[#FAF4EC] lg:max-w-7xl mx-auto overflow-hidden border-x border-b border-[#3D3D3D] border-dashed">
       <div className="space-y-10">
         <div className="grid grid-cols-5 divide-x divide-[#3D3D3D] divide-dashed border-b border-[#3D3D3D] border-dashed">
-          <div className="col-span-2 self-center">
-            <img src={LogoFooter} alt="" className="w-10/12 mx-auto" />
+          <div className="col-span-2 self-center h-full pt-16">
+            <img src={LogoFooter} alt="" className="w-10/12 mx-auto my-auto" />
           </div>
           <div className="space-y-2 p-10">
             <p className="uppercase">

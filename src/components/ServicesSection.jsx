@@ -5,7 +5,7 @@ import { Link } from "react-router";
 import Image1 from "../assets/images/illustrations/consultancy.svg"
 
 const ServicesSection = () => (
-  <section id="services" className="">
+  <section className="">
     <div className="mx-auto lg:max-w-screen-2xl">
       <p className="text-center uppercase pb-5 text-[#666666]">Our Services</p>
       <h2 className="text-[130px] leading-26 mango-black uppercase pb-6 text-center">

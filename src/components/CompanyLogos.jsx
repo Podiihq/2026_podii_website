@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useMemo, useState } from "react";
 import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
 import { RiArrowLeftUpLine, RiArrowRightUpLine } from "react-icons/ri";
+import { ImageComponent } from "./ImageComponent";
 
 const PAGE_SIZE = 5;
 
@@ -110,8 +111,12 @@ const CompaniesSection = () => {
                                     transition={{ duration: 0.24, delay: index * 0.04, ease: "easeOut" }}
                                     className="flex items-center justify-center relative border border-dashed border-[#ccc]"
                                 >
-                                    {/* <Corners /> */}
-                                    <img src={logo.source} alt={logo.alt} className="w-full object-contain" loading="lazy" />
+                                    <ImageComponent
+                                        image={logo.source} alt={logo.source}
+                                        imageClass="w-full h-full object-contain"
+                                        skeletonClass="h-40 w-full"
+                                    // loading="lazy"
+                                    />
                                 </motion.article>
                             ))}
                         </motion.div>
