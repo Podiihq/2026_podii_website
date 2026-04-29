@@ -76,11 +76,12 @@ const HomePage = () => {
               <motion.p className="lg:w-10/12" variants={fadeUp}>
                 We’re is the consultancy that diagnoses what is broken and builds what replaces it, so businesses can scale without the manual dependencies that cap their capacity.
               </motion.p>
-              <div className="group cursor-pointer flex items-center gap-5 border border-[#ccc] hover:bg-[#1a1a1a] border-dashed w-fit mt-5">
+              <div className="group relative cursor-pointer flex items-center gap-5 border border-[#ccc] hover:bg-[#1a1a1a] border-dashed w-fit mt-5">
+                <BorderConers />
                 <div className="px-4 py-3">
                   <p className="text-[#666666] group-hover:text-[#f5f5f5]">See how we  <span className="uppercase font-bold text-[#038585] group-hover:text-[#C8420B]">Recovered more than</span></p>
                   <div className="w-full flex justify-between items-end">
-                    <p className="text-5xl dotSans-black text-[#038585] group-hover:text-[#C8420B] leading-none">KSH 10M</p>
+                    <p className="text-5xl dotSans-black text-[#C8420B] group-hover:text-[#C8420B] leading-none">KSH 10M</p>
                     <RiArrowRightUpLine className='text-2xl text-[#038585] group-hover:text-[#C8420B]' />
                   </div>
                   <p className="text-[#666666] group-hover:text-[#f5f5f5]">for KIWASCO within a year.</p>
@@ -165,11 +166,11 @@ const HomePage = () => {
                 </h2>
               </div>
               <div className="flex items-center gap-2">
-                <div className="cursor-pointer flex gap-2 items-center border border-[#ccc] pl-2 pr-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase">
+                <div className="cursor-pointer flex gap-2 items-center border border-[#ccc] border-dashed pl-2 pr-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase">
                   <IoChevronBackSharp className='text-xl' />
                   Prev
                 </div>
-                <div className="cursor-pointer flex gap-2 items-center border border-[#ccc] pr-2 pl-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase">
+                <div className="cursor-pointer flex gap-2 items-center border border-[#ccc] border-dashed pr-2 pl-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase">
                   Next
                   <IoChevronForwardSharp className='text-xl' />
                 </div>
