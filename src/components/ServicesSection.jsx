@@ -1,5 +1,5 @@
 import { RiArrowRightUpLine } from "react-icons/ri";
-import { cards } from "../data/cards";
+import { service_home_cards } from "../data/services_data";
 import { BorderConers } from "./BorderConers";
 import { Link } from "react-router";
 import Image1 from "../assets/images/illustrations/consultancy.svg"
@@ -14,8 +14,8 @@ const ServicesSection = () => (
     </div>
     <div className="mx-auto lg:mt-10 bg-brand-neutral relative">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {cards.map((card) => (
-          <FeatureCard key={card.id} card={card} />
+        {service_home_cards.map((card, index) => (
+          <FeatureCard key={index} card={card} />
         ))}
       </div>
     </div>
@@ -53,7 +53,7 @@ const FeatureCard = ({ card }) => {
           </p>
           <div className="flex-1" />
           <div className="w-fit">
-            <Link to="#"
+            <Link to={`/services/#${card.id}`}
               className="uppercase tracking-widest underline hover:text-[#ccc]"
             >
               Learn More

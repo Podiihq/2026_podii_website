@@ -10,6 +10,10 @@ import {
 import { motion } from "framer-motion"
 import Lenis from 'lenis';
 import { services } from '../../../public/data/servicesData';
+import { service_data } from '../../data/services_data';
+import { RiArrowRightDownLine } from 'react-icons/ri';
+import { BorderConers } from '../../components/BorderConers';
+import { Link } from 'react-router';
 
 const ServicesPage = () => {
     useEffect(() => {
@@ -24,55 +28,61 @@ const ServicesPage = () => {
         };
     }, []);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+    // useEffect(() => {
+    //     window.scrollTo(0, 0);
+    // }, []);
     return (
         <InnerPageTransition>
-            <div className="bg-[#FAF4EC] text-[#181818]">
-                <div className="fixed w-full z-20">
-                    <NavBar />
+            <div className="bg-[#F5F5F5] text-[#1A1A1A]">
+                <div className="fixed w-full pt-4 z-100 lg:px-4 xl:px-0">
+                    <NavBar targetSectionRef="" />
                 </div>
                 <motion.section
                     variants={hero_container}
                     initial="hidden"
                     animate="show"
-                    className='pt-42 pb-10 lg:pb-20 lg:pt-42 lg:max-w-screen-2xl mx-auto px-4'
+                    className='pt-42 pb-10 lg:pb-20 lg:pt-42 lg:max-w-7xl mx-auto px-4 xl:px-0'
                 >
+                    <p className='uppercase font-bold pb-2'>Our Services</p>
                     <div className='flex'>
                         <motion.p
                             variants={fadeUp}
-                            className="text-[130px] leading-20 lg:text-[300px] lg:leading-60"
+                            className="text-[50px] leading-10 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase"
                         >
-                            Services
+                            What We Can Do, <br className='hidden md:block' /> For You.
                         </motion.p>
-                        <motion.p
-                            variants={fadeIn}
-                            className="text-4xl lg:text-5xl text-[#44A574]">(0{services?.length})</motion.p>
                     </div>
 
-                    <div className='flex justify-end pt-10'>
-                        <motion.p variants={fadeUp} className="indent-15 lg:indent-60 text-[40px] leading-10 lg:text-[76px] lg:leading-20 lg:w-10/12">
-                            We help your business run smarter, faster, and more efficiently by creating complete software systems, digital workflows, and AI-powered automation.
-                        </motion.p>
-                    </div>
+                    <motion.div variants={fadeUp} className='grid lg:grid-cols-1 gap-x-10 pt-10'>
+                        {service_data.map((item, index) => (
+                            <ServiceHeroCard
+                                key={index}
+                                service_number={item.service_number}
+                                service_id={item.id}
+                                service_title={item.service_title}
+                            />
+                        ))}
+                    </motion.div>
 
                     <motion.div variants={fadeUp} className='pt-20'>
-                        {services.map((item, index) => (
-                            <ServicesPageCard
+                        {service_data.map((item, index) => (
+                            <ServicesMainCard
                                 key={index}
-                                id={item.id}
-                                title={item.title}
-                                description={item.description}
-                                service_items={item.service_items}
-                                service_outcome={item.service_outcome}
+                                service_id={item.id}
+                                service_number={item.service_number}
+                                service_title={item.service_title}
+                                service_description={item.service_description}
+                                what_changes={item.what_changes}
+                                intro_statement={item.intro_statement}
+                                end_statement={item.end_statement}
+                                service_project={item.service_project}
                             />
                         ))}
                     </motion.div>
                 </motion.section>
-                <div className='pb-6'>
+                <section className="pb-1 xl:pb-10 bg-[#1e1e1e]">
                     <Footer />
-                </div>
+                </section>
             </div>
         </InnerPageTransition>
     )
@@ -82,50 +92,74 @@ export default ServicesPage
 
 
 
-export const ServicesPageCard = ({ id, title, description, service_items, service_outcome }) => {
+export const ServiceHeroCard = ({ service_number, service_title, service_id }) => {
     return (
-        <div className='border-t py-20 lg:py-32 border-[#CACACA]'>
-            <div className='grid lg:grid-cols-5'>
-                <div className='flex items-start gap-4 lg:col-span-2'>
-                    <p className='text-5xl leading-none lg:text-[60px] lg:leading-13'>(0{id})</p>
-                    <p className='text-5xl leading-none lg:text-[60px] lg:leading-13'>{title}</p>
-                </div>
-                <div className='lg:col-span-3 space-y-10 pt-3 lg:pt-0'>
-                    <div className='space-y-4'>
-                        {description?.map((item, index) => (
-                            <p key={index} className='helvetica-regular lg:text-xl'>{item}</p>
+        <a href={`#${service_id}`} className='flex cursor-pointer items-center justify-between py-4 px-2 border-b border-dashed border-[#d4d4d4] hover:bg-white'>
+            <div className='flex items-center gap-4'>
+                <p className='font-bold'>0{service_number}</p>
+                <p className='font-bold'>{service_title}</p>
+            </div>
+            <div>
+                <RiArrowRightDownLine className='text-xl' />
+            </div>
+        </a>
+    )
+}
+
+
+
+
+export const ServicesMainCard = ({
+    service_number,
+    service_id,
+    service_title,
+    what_changes,
+    intro_statement,
+    service_description,
+    end_statement,
+    service_project
+}) => {
+    return (
+        <div id={service_id} className='border-[#CACACA] border border-dashed p-10 mb-6 relative'>
+            <BorderConers />
+            <div className='grid lg:grid-cols-5 gap-2'>
+                <div className='flex flex-col space-y-6 col-span-3 border-[#CACACA] pr-4 border-r border-dashed' >
+                    <div className='spacey-2'>
+                        <p className='uppercase font-bold'>Service 0{service_number}</p>
+                        <p className='mango-black uppercase lg:text-[74px] lg:leading-18'>{service_title}</p>
+                    </div>
+                    <div className='space-y-2'>
+                        <p className='font-bold text-xl'>What Changes:</p>
+                        <div className='list-decimal pl-4'>
+                            {what_changes?.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </div>
+                    </div>
+                    <p className='text-xl font-bold lg:w-2/3 text-[#016B6B]'>{intro_statement}</p>
+                    <div className='space-y-4 border-l-3 pl-3 border-[#016B6B]'>
+                        {service_description?.map((item, index) => (
+                            <p key={index} className=''>{item}</p>
                         ))}
                     </div>
-                    {service_items && (
-                        <div className='space-y-3'>
-                            <p className='text-3xl lg:text-[40px] lg:leading-10'>How we do it</p>
-                            <div className='grid lg:grid-cols-2 gap-1'>
-                                {service_items.map((item, index) => (
-                                    <div key={index} className='space-y-2 border border-[#ccc] p-4'>
-                                        <p className='lg:text-lg uppercase helvetica-regular font-bold'>{item.title}</p>
-                                        {item.details && (
-                                            <div>
-                                                {item.details.map((detail, dIndex) => (
-                                                    <div key={dIndex} className='flex items-start lg:items-center gap-2'>
-                                                        <div className='w-1.5 h-1.5 bg-[#1e1e1e] mt-2 lg:mt-0' />
-                                                        <p className='helvetica-regular lg:text-lg'>{detail}</p>
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        )}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-
-                    {service_outcome && (
-                        <div className='pt-6'>
-                            <p className='text-3xl lg:text-[40px] lg:leading-10'>What this means for you</p>
-                            <p className='helvetica-regular lg:text-xl mt-2'>{service_outcome}</p>
-                        </div>
-                    )}
+                    <p className='font-bold text-xl lg:w-2/3 text-[#C8420B]'>{end_statement}</p>
                 </div>
+                {service_project && (
+                    <div className='col-span-2 self-center p-10'>
+                        {service_project.map((item, index) => (
+                            <Link to={item.project_link} key={index}>
+                                <div className='p-4 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] border border-dashed border-[#CACACA] bg-white space-y-3 relative'>
+                                    <BorderConers />
+                                    <img src={item.project_image} alt="" />
+                                    <p className='text-2xl'>{item.project_name}</p>
+                                    <p>{item.project_description}</p>
+                                    <p className='uppercase underline text-[#016B6B]'>Read Case Study</p>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                )}
+
             </div>
         </div>
     )

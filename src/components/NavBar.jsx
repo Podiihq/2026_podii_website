@@ -12,8 +12,8 @@ import { RiArrowRightUpLine } from 'react-icons/ri'
 
 const navigation = [
     { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
     { label: "About", href: "#" },
-    { label: "Services", href: "#" },
     { label: "Case Studies", href: "#" },
 ];
 

@@ -23,6 +23,8 @@
 
 * {
     font-family: DotSans;
+    scroll-behavior: smooth;
+    scroll-margin-top: 100px;
 }
 
 .dotSans-black {
