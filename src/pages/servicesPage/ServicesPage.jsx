@@ -49,7 +49,7 @@ const ServicesPage = () => {
                             variants={fadeUp}
                             className="text-[50px] leading-10 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase"
                         >
-                            What We Can Do, <br className='hidden md:block' /> For You.
+                            What We Can Do, <br /> For You.
                         </motion.p>
                     </div>
 
@@ -120,13 +120,13 @@ export const ServicesMainCard = ({
     service_project
 }) => {
     return (
-        <div id={service_id} className='border-[#CACACA] border border-dashed p-10 mb-6 relative'>
+        <div id={service_id} className='border-[#CACACA] border border-dashed p-5 lg:p-10 mb-6 relative'>
             <BorderConers />
             <div className='grid lg:grid-cols-5 gap-2'>
-                <div className='flex flex-col space-y-6 col-span-3 border-[#CACACA] pr-4 border-r border-dashed' >
-                    <div className='spacey-2'>
-                        <p className='uppercase font-bold'>Service 0{service_number}</p>
-                        <p className='mango-black uppercase lg:text-[74px] lg:leading-18'>{service_title}</p>
+                <div className='flex flex-col space-y-6 lg:col-span-3 border-[#CACACA] pr-4 lg:border-r border-dashed pb-4 lg:pb-0' >
+                    <div className='space-y-2'>
+                        <p className='uppercase font-bold text-[#016B6B]'>Service 0{service_number}</p>
+                        <p className='mango-black uppercase text-[50px] leading-10 lg:text-[74px] lg:leading-18'>{service_title}</p>
                     </div>
                     <div className='space-y-2'>
                         <p className='font-bold text-xl'>What Changes:</p>
@@ -145,7 +145,7 @@ export const ServicesMainCard = ({
                     <p className='font-bold text-xl lg:w-2/3 text-[#C8420B]'>{end_statement}</p>
                 </div>
                 {service_project && (
-                    <div className='col-span-2 self-center p-10'>
+                    <div className='lg:col-span-2 self-center lg:p-10'>
                         {service_project.map((item, index) => (
                             <Link to={item.project_link} key={index}>
                                 <div className='p-4 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] border border-dashed border-[#CACACA] bg-white space-y-3 relative'>
