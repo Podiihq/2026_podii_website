@@ -114,7 +114,7 @@ const HomePage = () => {
                       We work with businesses to map out their current process flows, while identifying bottleknecks and rebuilding their infrastructure from the ground up. We use the right data model, integration architecture and automation logic. Not just a layer on top of broken process.
                     </p>
                     <h2 className="indent-3 lg:indent-6 md:text-xl font-bold text-[#C8420B]">
-                      Fix the System, not the person.
+                      Fix the system, not the person.
                     </h2>
                   </div>
                 </div>

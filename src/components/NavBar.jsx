@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { RiArrowRightUpLine } from 'react-icons/ri'
 
 const navigation = [
-    { label: "Home", href: "#" },
+    { label: "Home", href: "/" },
     { label: "About", href: "#" },
     { label: "Services", href: "#" },
     { label: "Case Studies", href: "#" },
