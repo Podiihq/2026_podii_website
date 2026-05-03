@@ -1,10 +1,21 @@
+import { useState, useMemo, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { useMemo, useState } from "react";
 import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
-import { RiArrowLeftUpLine, RiArrowRightUpLine } from "react-icons/ri";
 import { ImageComponent } from "./ImageComponent";
 
-const PAGE_SIZE = 6;
+
+const useIsMobile = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth < 768);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+
+    return isMobile;
+};
 
 const logoModules = import.meta.glob("../assets/images/company-logos/*.svg", {
     eager: true,
@@ -25,40 +36,40 @@ const orderedLogos = Object.entries(logoModules)
     }));
 
 const CompaniesSection = () => {
+    const isMobile = useIsMobile();
+    const pageSize = isMobile ? 3 : 6;
+
     const [startIndex, setStartIndex] = useState(0);
     const [direction, setDirection] = useState(1);
+
     const total = orderedLogos.length;
-    const canPaginate = total > PAGE_SIZE;
-    const totalPages = Math.ceil(total / PAGE_SIZE);
-    const currentPage = Math.floor(startIndex / PAGE_SIZE) + 1;
+    const canPaginate = total > pageSize;
+    const totalPages = Math.ceil(total / pageSize);
+    const currentPage = Math.floor(startIndex / pageSize) + 1;
+
+    useEffect(() => {
+        setStartIndex(0);
+    }, [pageSize]);
 
     const visibleLogos = useMemo(() => {
-        if (total === 0) {
-            return [];
-        }
+        if (total === 0) return [];
 
-        return Array.from({ length: Math.min(PAGE_SIZE, total) }, (_, index) => {
+        return Array.from({ length: Math.min(pageSize, total) }, (_, index) => {
             const logoIndex = (startIndex + index) % total;
             return orderedLogos[logoIndex];
         });
-    }, [startIndex, total]);
+    }, [startIndex, total, pageSize]);
 
     const goNext = () => {
-        if (!canPaginate) {
-            return;
-        }
-
+        if (!canPaginate) return;
         setDirection(1);
-        setStartIndex((previous) => (previous + PAGE_SIZE) % total);
+        setStartIndex((prev) => (prev + pageSize) % total);
     };
 
     const goPrevious = () => {
-        if (!canPaginate) {
-            return;
-        }
-
+        if (!canPaginate) return;
         setDirection(-1);
-        setStartIndex((previous) => (previous - PAGE_SIZE + total) % total);
+        setStartIndex((prev) => (prev - pageSize + total) % total);
     };
 
     return (
@@ -68,26 +79,26 @@ const CompaniesSection = () => {
                     <div className="space-y-2">
                         <p className="text-xl uppercase font-bold">Trusted BY</p>
                         <p className="text-xs uppercase tracking-[0.18em] text-[#ccc]">
-                            Showing {Math.min(PAGE_SIZE, total)} at a time · {total === 0 ? 0 : currentPage} of {totalPages || 0}
+                            Showing {Math.min(pageSize, total)} at a time ·{" "}
+                            {total === 0 ? 0 : currentPage} of {totalPages || 0}
                         </p>
                     </div>
+
                     <div className="flex items-center gap-2">
                         <div
                             onClick={goPrevious}
                             className="cursor-pointer flex gap-2 items-center border border-dashed border-[#ccc] pl-2 pr-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase"
-                            disabled={!canPaginate}
                         >
-
-                            <IoChevronBackSharp className='text-xl' />
+                            <IoChevronBackSharp className="text-xl" />
                             Prev
                         </div>
+
                         <div
                             onClick={goNext}
                             className="cursor-pointer flex gap-2 items-center border border-dashed border-[#ccc] pr-2 pl-4 py-2 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] uppercase"
-                            disabled={!canPaginate}
                         >
                             Next
-                            <IoChevronForwardSharp className='text-xl' />
+                            <IoChevronForwardSharp className="text-xl" />
                         </div>
                     </div>
                 </div>
@@ -108,11 +119,16 @@ const CompaniesSection = () => {
                                     key={logo.id}
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.24, delay: index * 0.04, ease: "easeOut" }}
+                                    transition={{
+                                        duration: 0.24,
+                                        delay: index * 0.04,
+                                        ease: "easeOut"
+                                    }}
                                     className="flex items-center justify-center relative border border-dashed border-[#ccc]"
                                 >
                                     <ImageComponent
-                                        image={logo.source} alt={logo.source}
+                                        image={logo.source}
+                                        alt={logo.alt}
                                         imageClass="w-full h-full object-contain"
                                         skeletonClass="h-40 w-full"
                                         loading="lazy"
