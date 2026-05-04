@@ -28,9 +28,9 @@ const ServicesPage = () => {
         };
     }, []);
 
-    // useEffect(() => {
-    //     window.scrollTo(0, 0);
-    // }, []);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <InnerPageTransition>
             <div className="bg-[#F5F5F5] text-[#1A1A1A]">
@@ -43,7 +43,7 @@ const ServicesPage = () => {
                     animate="show"
                     className='pt-42 pb-10 lg:pb-20 lg:pt-42 lg:max-w-7xl mx-auto px-4 xl:px-0'
                 >
-                    <p className='uppercase font-bold pb-2'>Our Services</p>
+                    <p className='uppercase font-bold pb-2 text-[#038585]'>Our Services</p>
                     <div className='flex'>
                         <motion.p
                             variants={fadeUp}
@@ -148,12 +148,12 @@ export const ServicesMainCard = ({
                     <div className='lg:col-span-2 self-center lg:p-10'>
                         {service_project.map((item, index) => (
                             <Link to={item.project_link} key={index}>
-                                <div className='p-4 hover:bg-[#1a1a1a] hover:text-[#f5f5f5] border border-dashed border-[#CACACA] bg-white space-y-3 relative'>
+                                <div className='p-4 group hover:bg-[#1a1a1a] hover:text-[#f5f5f5] border border-dashed border-[#CACACA] bg-white space-y-3 relative'>
                                     <BorderConers />
                                     <img src={item.project_image} alt="" />
                                     <p className='text-2xl'>{item.project_name}</p>
                                     <p>{item.project_description}</p>
-                                    <p className='uppercase underline text-[#016B6B]'>Read Case Study</p>
+                                    <p className='uppercase underline text-[#016B6B] group-hover:text-[#C8420B]'>{item.project_status}</p>
                                 </div>
                             </Link>
                         ))}
