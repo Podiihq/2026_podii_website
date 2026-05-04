@@ -12,23 +12,23 @@ const Footer = () => {
   return (
     <div className="text-[#FAF4EC] lg:max-w-7xl mx-auto md:px-4 xl:px-0 overflow-hidden border-x border-b border-[#3D3D3D] border-dashed">
       <div className="space-y-10">
-        <div className="grid grid-cols-2 lg:grid-cols-5 divide-x divide-y divide-[#3D3D3D] divide-dashed border-b border-[#3D3D3D] border-dashed">
-          <div className="lg:col-span-2 self-center h-full pt-16">
-            <img src={LogoFooter} alt="" className="w-10/12 mx-auto my-auto" />
+        <div className="grid grid-cols-2 lg:grid-cols-9 divide-x divide-y divide-[#3D3D3D] divide-dashed border-b border-[#3D3D3D] border-dashed">
+          <div className="lg:col-span-3 self-center h-full pt-20">
+            <img src={LogoFooter} alt="" className="w-8/12 mx-auto my-auto" />
           </div>
-          <div className="space-y-2 p-3 xl:p-10">
+          <div className="space-y-2 p-3 xl:p-10 lg:col-span-2">
             <p className="uppercase dotSans-black">
               Website Link
             </p>
             <div>
               <FooterLink title="Home" link_item="/" />
               <FooterLink title="Services" link_item="/services" />
-              <FooterLink title="Our Work" link_item="/projects" />
+              <FooterLink title="Case Studies" link_item="/#" />
               <FooterLink title="About Us" link_item="#" />
               <FooterLink title="Contact Us" link_item="/contact" />
             </div>
           </div>
-          <div className="space-y-2 p-3 xl:p-10">
+          <div className="space-y-2 p-3 xl:p-10 lg:col-span-2">
             <p className="uppercase dotSans-black">
               Social Links
             </p>
@@ -38,7 +38,7 @@ const Footer = () => {
               <FooterLink title="Facebook" link_item="#" />
             </div>
           </div>
-          <div className="space-y-2 p-3 xl:p-10">
+          <div className="space-y-2 p-3 xl:p-10 lg:col-span-2">
             <p className="uppercase dotSans-black">Contacts</p>
             <div className="space-y-4">
               <FooterList title="0733 000003" icon={<MdPhone />} />
@@ -53,7 +53,7 @@ const Footer = () => {
 
         <div className="pb-10">
           <p className="text-center text-[#ccc] text-sm px-2">
-            © Copyright Podii Consultants 2026 || All Rights Reserved️
+            © Copyright Podii Consultants LTD 2026 || All Rights Reserved️
           </p>
         </div>
       </div>
@@ -67,7 +67,7 @@ export const FooterLink = ({ title, link_item }) => {
   return (
     <Link to={link_item} className="">
       <div className="flex items-start gap-1 py-1">
-        <p className="hover:underline hover:text-[#FAF4EC] text-[#ccc]">
+        <p className="hover:underline hover:text-[#FAF4EC] text-[#ccc] uppercase text-sm">
           {title}
         </p>
       </div>

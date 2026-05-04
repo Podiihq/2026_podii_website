@@ -43,7 +43,7 @@ const ServicesPage = () => {
                     animate="show"
                     className='pt-32 pb-10 lg:pb-20 lg:pt-40 lg:max-w-7xl mx-auto px-4 xl:px-0'
                 >
-                    <p className='uppercase font-bold pb-2 text-[#038585]'>Our Services</p>
+                    <p className='uppercase font-bold text-[#038585]'>Our Services</p>
                     <div className='flex'>
                         <motion.p
                             variants={fadeUp}
@@ -96,7 +96,7 @@ export const ServiceHeroCard = ({ service_number, service_title, service_id }) =
     return (
         <a href={`#${service_id}`} className='flex cursor-pointer items-center justify-between py-4 px-2 border-b border-dashed border-[#d4d4d4] hover:bg-white'>
             <div className='flex items-center gap-4'>
-                <p className='font-bold'>0{service_number}</p>
+                <p className='font-bold'>0{service_number}.</p>
                 <p className='font-bold'>{service_title}</p>
             </div>
             <div>

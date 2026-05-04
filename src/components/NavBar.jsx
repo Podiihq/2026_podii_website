@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import LogoBlackWide from "../assets/images/logo/Wide_Logo_black_noIcon_noBg.svg"
-import LogoWhiteWide from "../assets/images/logo/Wide_Logo_white_noIcon_noBg.svg"
+import LogoWhiteWide from "../assets/images/logo/Wide_Logo_white_noIcon_noBg2.svg"
 import LogoBlackStandard from "../assets/images/logo/logo_black_nobackground.svg"
 import LogoWhiteStandard from "../assets/images/logo/Standard_logo_white_nobackground.svg"
 import { ButtonComponent } from './ButtonComponent'
@@ -80,7 +80,9 @@ const NavBar = ({ targetSectionRef }) => {
                             buttonClass={`hidden lg:flex ${isInSection
                                 ? "text-[#F5F5F5] bg-[#C8420B] border border-white hover:shadow-[4px_4px_0px_black]"
                                 : "bg-[#C8420B] text-[F5F5F5] border border-[#C8420B] hover:shadow-[4px_4px_0px_white]"}`}
-                            title="Let's Work" />
+                            title="Let's Work"
+                            button_link="/contact"
+                        />
 
                         <button
                             className="lg:hidden text-xl uppercase flex items-center gap-2 active:bg-[#303030]"
@@ -135,7 +137,7 @@ const NavBar = ({ targetSectionRef }) => {
                             </Link>
                         ))}
                         <div className='flex-1' />
-                        <Link className='w-full'>
+                        <Link onClick={() => setIsMenuOpen(false)} to="/contact" className='w-full'>
                             <div className='w-full bg-[#C8420B] py-5 flex justify-center items-end'>
                                 <p className='uppercase text-xl leading-none text-center'>Lets Work</p>
                                 <RiArrowRightUpLine className='text-xl' />

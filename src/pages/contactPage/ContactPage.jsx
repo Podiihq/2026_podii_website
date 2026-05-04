@@ -13,6 +13,8 @@ const ContactPage = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [success, setSuccess] = useState(false);
+
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -125,112 +127,118 @@ const ContactPage = () => {
 
     return (
         <InnerPageTransition>
-            <div className="bg-[#FAF4EC] text-[#181818] min-h-screen">
-                <div className="fixed w-full z-20">
-                    <NavBar />
+            <div className="bg-[#F5F5F5] text-[#1A1A1A] min-h-screen">
+                <div className="fixed w-full pt-4 z-100 lg:px-4 xl:px-0">
+                    <NavBar targetSectionRef="" />
                 </div>
                 <motion.section
                     variants={hero_container}
                     initial="hidden"
                     animate="show"
-                    className='pt-42 pb-10 lg:pb-20 lg:pt-42 lg:max-w-screen-2xl mx-auto px-4'
+                    className='pt-32 pb-10 lg:pb-20 lg:pt-40 lg:max-w-7xl mx-auto p-4 lg:p-10 lg:border-x border-dashed border-[#ccc]'
                 >
                     <motion.p
                         variants={fadeUp}
-                        className="text-[130px] leading-25 lg:text-[300px] lg:leading-60"
+                        className="text-[70px] text-center pb-10 leading-14 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase"
                     >
                         Let's Work
                     </motion.p>
-
-
-                    <div className='lg:max-w-4xl mx-auto lg:pt-20'>
+                    <motion.div variants={fadeUp} className='lg:max-w-3xl mx-auto pt-10'>
                         <form className="" id="contact_form" onSubmit={sendMail}>
-                            <div className="py-6">
+                            <div className="">
                                 <div className="flex flex-col gap-5">
-                                    <div className="">
-                                        <LabelComponent label_html="userName" label_title="Full name? *" />
-                                        <div className="mt-2" data-text-animation>
+                                    <div className='grid  gap-x-10 gap-y-4'>
+                                        <div className="w-full space-y-2">
+                                            <LabelComponent label_html="userName" label_title="Your Full name? *" />
+                                            <div data-text-animation>
+                                                <input
+                                                    type="text"
+                                                    required
+                                                    id="userName"
+                                                    name="userName"
+                                                    placeholder="John Doe*"
+                                                    autoComplete="given-name"
+                                                    className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc]"
+                                                    value={formData.userName}
+                                                    onChange={handleChange}
+                                                />
+                                            </div>
+                                            {errors.userName && <div className="error-message text-[#C8420B]">{errors.userName}</div>}
+                                        </div>
+
+                                        <div className="w-full space-y-2" data-text-animation>
+                                            <LabelComponent label_html="email" label_title="Your email? *" />
+                                            <input
+                                                type="email"
+                                                required
+                                                name="email"
+                                                id="email"
+                                                placeholder="email@email.com*"
+                                                autoComplete="given-name"
+                                                className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc]"
+                                                value={formData.email}
+                                                onChange={handleChange}
+                                                data-text-animation
+                                            />
+                                            {errors.email && <div className="error-message text-[#C8420B]">{errors.email}</div>}
+                                        </div>
+
+                                        <div className="w-full space-y-2">
+                                            <LabelComponent label_html="country" label_title="Your Country? *" />
                                             <input
                                                 type="text"
                                                 required
-                                                id="userName"
-                                                name="userName"
-                                                placeholder="John Doe*"
+                                                name="country"
+                                                id="country"
+                                                placeholder="Kenya"
                                                 autoComplete="given-name"
-                                                className="block w-full border-b-2 py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
-                                                value={formData.userName}
+                                                className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc]"
+                                                value={formData.country}
                                                 onChange={handleChange}
+                                                data-text-animation
                                             />
+                                            {errors.country && <div className="error-message text-[#C8420B]">{errors.country}</div>}
                                         </div>
-                                        {errors.userName && <div className="error-message text-red-500 helvetica-regular uppercase">{errors.userName}</div>}
                                     </div>
 
-                                    <div className="" data-text-animation>
-                                        <LabelComponent label_html="email" label_title="Your email? *" />
-                                        <input
-                                            type="email"
-                                            required
-                                            name="email"
-                                            id="email"
-                                            placeholder="email@email.com*"
-                                            autoComplete="given-name"
-                                            className="block w-full border-b-2 py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            data-text-animation
-                                        />
-                                        {errors.email && <div className="error-message text-red-500 helvetica-regular uppercase">{errors.email}</div>}
-                                    </div>
 
-                                    <div className="">
-                                        <LabelComponent label_html="country" label_title="Your Country? *" />
-                                        <input
-                                            type="text"
-                                            required
-                                            name="country"
-                                            id="country"
-                                            placeholder="Kenya"
-                                            autoComplete="given-name"
-                                            className="block w-full border-b-2 py-3.5 px-2 ring-inset text-5xl leading-none lg:text-[60px] lg:leading-13 placeholder:text-[#D0D0D0]"
-                                            value={formData.country}
-                                            onChange={handleChange}
-                                            data-text-animation
-                                        />
-                                        {errors.country && <div className="error-message text-red-500 helvetica-regular uppercase">{errors.country}</div>}
-                                    </div>
-
-                                    <div className="pt-10">
-                                        <label htmlFor="checkboxGroup" className="block helvetica-regular font-bold uppercase" data-text-animation>
-                                            What solutions do you need today?*
+                                    <div className="pt-6 lg:pt-10 w-full">
+                                        <label htmlFor="checkboxGroup" className="block font-bold uppercase pb-3" data-text-animation>
+                                            Select What solutions do you need today*
                                         </label>
                                         {[
-                                            'Intelligent automation',
-                                            'Digital Transformation',
-                                            'End-to-End Software Product Development',
-                                            'other',
+                                            'I want to automate repetitive tasks, uncover actionable insights, and make smarter decisions by integrating AI into my existing systems (Intelligent Automation).',
+                                            'I want to replace my manual workflows like spreadsheets, paperwork, emails, and disconnected tools with structured digital systems (Digital Transformation).',
+                                            'I want to turn my idea into a fully functional software system, from  design to launch (End-to-End Software Product Development).',
+                                            'I want to uncover the real causes behind my businesses operational issues, not just their symptoms (Consultancy).',
+                                            'Other'
                                         ].map((service, index) => (
-                                            <div className="flex items-center gap-3 lg:mb-2" key={index} data-text-animation>
-                                                <input
-                                                    type="checkbox"
-                                                    id={`checkbox${index + 1}`}
-                                                    name="checkboxGroup"
-                                                    value={service}
-                                                    className="w-6 h-6 lg:h-10 lg:w-10 bg-[#FAF4EC] focus:outline-none ring-2 ring-[#1e1e1e] custom-cursor"
-                                                    checked={formData.services.includes(service)}
-                                                    onChange={handleChange}
-                                                />
-                                                <label htmlFor={`checkbox${index + 1}`} className="text-4xl w-full leading-none lg:text-[50px] lg:leading-13 pt-3">
-                                                    {service}
-                                                </label>
+                                            <div className="w-full pb-2" key={index} data-text-animation>
+                                                <div className='flex items-start gap-3 border border-dashed border-[#ccc] p-2 hover:bg-white'>
+                                                    <div className='pt-1'>
+                                                        <input
+                                                            type="checkbox"
+                                                            id={`checkbox${index + 1}`}
+                                                            name="checkboxGroup"
+                                                            value={service}
+                                                            className="w-6 h-6 bg-[#F5F5F5] focus:outline-none ring ring-[#1e1e1e] custom-cursor"
+                                                            checked={formData.services.includes(service)}
+                                                            onChange={handleChange}
+                                                        />
+                                                    </div>
+                                                    <label htmlFor={`checkbox${index + 1}`} className="w-full">
+                                                        {service}
+                                                    </label>
+                                                </div>
 
                                             </div>
                                         ))}
-                                        {errors.services && <div className="error-message text-red-500 helvetica-regular uppercase">{errors.services}</div>}
+                                        {errors.services && <div className="error-message text-[#C8420B]">{errors.services}</div>}
                                     </div>
 
                                     <div className="">
                                         <LabelComponent label_html="other" label_title="Please describe your projects in a few words?*" />
-                                        <span className="helvetica-regular font-bold uppercase text-gray-500" data-text-animation>(Minimum of 20 words)</span>
+                                        <span className=" font-bold uppercase text-gray-500" data-text-animation>(Minimum of 20 words)</span>
                                         <div className="mt-4" data-text-animation>
                                             <textarea
                                                 id="other"
@@ -238,49 +246,48 @@ const ContactPage = () => {
                                                 placeholder="Type something here..."
                                                 name="other"
                                                 rows="5"
-                                                className="block w-full border-b-2 py-1.5 px-1.5 text-gray-900 placeholder:text-[#D0D0D0] text-5xl leading-none lg:text-[50px] lg:leading-13"
+                                                className="block w-full border border-dashed py-1.5 px-1.5 text-gray-900 placeholder:text-[#ccc]"
                                                 value={formData.other}
                                                 onChange={handleChange}
                                             ></textarea>
                                         </div>
-                                        {errors.other && <div className="error-message text-red-500 helvetica-regular uppercase">{errors.other}</div>}
+                                        {errors.other && <div className="error-message text-[#C8420B]">{errors.other}</div>}
                                     </div>
 
-                                    <div className="relative w-full pt-10">
+                                    <div className="relative w-full pt-4 space-y-2">
                                         <LabelComponent label_html="budget" label_title="What is your estimated budget for this project?*" />
                                         <select
                                             id="budget"
                                             required
                                             name="budget"
-                                            className="px-2 pt-3 w-full border-b-2 bg-transparent
-                                            text-5xl leading-none lg:text-[50px] lg:leading-13"
+                                            className="px-2 p-3 w-full border border-dashed bg-transparent"
                                             value={formData.budget}
                                             onChange={handleChange}
                                             data-text-animation
                                         >
-                                            <option value="" disabled selected className="text-gray-400 text-xl">
+                                            <option value="" disabled selected className="text-gray-400">
                                                 Select your budget range
                                             </option>
-                                            <option value="$20,000 and above" className='text-xl helvetica-regular'>$20,000 and above</option>
-                                            <option value="$10,000" className='text-xl helvetica-regular'>$10,000</option>
-                                            <option value="$5000 and below" className='text-xl helvetica-regular'>$5000 and below</option>
+                                            <option value="$20,000 and above" className=''>$20,000 and above</option>
+                                            <option value="$10,000" className=''>$10,000</option>
+                                            <option value="$5000 and below" className=''>$5000 and below</option>
                                         </select>
-                                        {errors.budget && <div className="error-message text-red-500 helvetica-regular uppercase">{errors.budget}</div>}
+                                        {errors.budget && <div className="error-message text-[#C8420B]">{errors.budget}</div>}
                                     </div>
 
-                                    <div className="pt-10">
+                                    <div className="pt-4">
                                         <button
                                             type="submit"
                                             id="loaderButton"
-                                            className="custom-cursor relative inline-flex items-center justify-center w-full px-6 py-6
+                                            className="cursor-pointer rounded relative inline-flex items-center justify-center w-full px-6 py-6
                                             text-5xl leading-none lg:text-[50px] lg:leading-13
-                                            font-medium transition duration-200 rounded bg-[#FC8C67] hover:bg-transparent border-2
+                                            font-medium transition duration-200 bg-[#C8420B] hover:bg-transparent border-2 border-[#1a1a1a] hover:border-[#1a1a1a]
                                             hover:-translate-x-2 hover:-translate-y-2 
                                             hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-0 active:translate-y-0 
-                                            active:rounded-2xl active:shadow-none"
+                                            active:rounded-2xl active:shadow-none group"
                                         >
                                             {loading ? "" :
-                                                <span id="buttonText">SUBMIT</span>
+                                                <span id="buttonText" className='mango-black text-[#f5f5f5] group-hover:text-[#1a1a1a]'>SUBMIT</span>
                                             }
                                             {loading && (
                                                 <div id="loader" className="absolute inset-0 items-center justify-center flex ">
@@ -289,7 +296,7 @@ const ContactPage = () => {
                                             )}
                                         </button>
                                         {success && (
-                                            <div className="mt-4 text-green-600 helvetica-regular text-center">
+                                            <div className="mt-4 text-green-600  text-center">
                                                 Form submitted successfully! Thanks for reaching out 🥳🥳!! <br />
                                                 We can't wait to work with you!!.
                                             </div>
@@ -298,11 +305,13 @@ const ContactPage = () => {
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </motion.div>
                 </motion.section>
-                <Footer />
-            </div>
-        </InnerPageTransition>
+                <section className="pb-1 xl:pb-10 bg-[#1e1e1e]">
+                    <Footer />
+                </section>
+            </div >
+        </InnerPageTransition >
     )
 }
 
@@ -314,7 +323,7 @@ export default ContactPage
 
 export const LabelComponent = ({ label_html, label_title }) => {
     return (
-        <label htmlFor={label_html} className="block helvetica-regular uppercase font-bold" data-text-animation>
+        <label htmlFor={label_html} className="block  uppercase font-bold" data-text-animation>
             {label_title}
         </label>
     )

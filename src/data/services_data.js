@@ -7,7 +7,7 @@ import Image4 from "../assets/images/illustrations/consultancy.svg"
 export const service_home_cards = [
   {
     id: "automation",
-    headingLines: "1] Intelligent Automation",
+    headingLines: "1. Intelligent Automation",
     description:
       "Automate repetitive tasks, uncover actionable insights, and make smarter decisions by integrating AI into your existing systems, without  changing what already works.",
     moreClass: "",
@@ -16,7 +16,7 @@ export const service_home_cards = [
   },
   {
     id: "digitization",
-    headingLines: "2] Digital Transformation",
+    headingLines: "2. Digital Transformation",
     description:
       "Replace manual workflows like spreadsheets, paperwork, emails,  and disconnected tools with structured digital systems, designed around  how your business actually operates.",
     moreClass: "",
@@ -25,7 +25,7 @@ export const service_home_cards = [
   },
   {
     id: "software",
-    headingLines: "3] End-to-End Software Product Development",
+    headingLines: "3. End-to-End Software Product Development",
     description:
       "Turn your idea into a fully functional software system, from  design to launch, covering web and mobile development, backend,  infrastructures and deployment",
     moreClass: "",
@@ -34,7 +34,7 @@ export const service_home_cards = [
   },
   {
     id: "consultancy",
-    headingLines: "4] Consultancy",
+    headingLines: "4. Consultancy",
     description:
       "Uncover the real causes behind operational issues, not just their symptoms. We run a full diagnostic—mapping your processes, identifying bottlenecks and dependencies, and pinpointing root causes—then deliver a clear, prioritised redesign roadmap before any code is written.",
     moreClass: "lg:col-span-2",
