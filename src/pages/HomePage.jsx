@@ -65,7 +65,7 @@ const HomePage = () => {
             <div className="self-center col-span-3 space-y-4">
               <motion.p
                 variants={fadeUp}
-                className="text-[50px] leading-10 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase"
+                className="text-[70px] leading-14 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase"
               >
                 The bottleneck is always human.
                 That’s a design problem.

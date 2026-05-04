@@ -41,13 +41,13 @@ const ServicesPage = () => {
                     variants={hero_container}
                     initial="hidden"
                     animate="show"
-                    className='pt-42 pb-10 lg:pb-20 lg:pt-42 lg:max-w-7xl mx-auto px-4 xl:px-0'
+                    className='pt-32 pb-10 lg:pb-20 lg:pt-40 lg:max-w-7xl mx-auto px-4 xl:px-0'
                 >
                     <p className='uppercase font-bold pb-2 text-[#038585]'>Our Services</p>
                     <div className='flex'>
                         <motion.p
                             variants={fadeUp}
-                            className="text-[50px] leading-10 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase"
+                            className="text-[70px] leading-14 md:text-[80px] md:leading-18 lg:text-[100px] lg:leading-20 xl:text-[130px] xl:leading-26 mango-black uppercase"
                         >
                             What We Can Do, <br /> For You.
                         </motion.p>
