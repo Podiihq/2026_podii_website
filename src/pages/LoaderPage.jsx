@@ -11,7 +11,7 @@ import Logo8 from "../assets/images/company-logos/27.svg"
 import Logo9 from "../assets/images/company-logos/28.svg"
 import Logo10 from "../assets/images/company-logos/29.svg"
 
-import image1 from "../assets/images/illustrations/hero-illustration.svg"
+import Image1 from "../assets/images/illustrations/hero-illustration.svg"
 
 import LogoIcon from "../assets/images/logo/Wide_logo_white_nobackground.svg"
 
