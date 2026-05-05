@@ -24,7 +24,7 @@ const Footer = () => {
               <FooterLink title="Home" link_item="/" />
               <FooterLink title="Services" link_item="/services" />
               <FooterLink title="Case Studies" link_item="/#" />
-              <FooterLink title="About Us" link_item="#" />
+              <FooterLink title="About Us" link_item="/about" />
               <FooterLink title="Contact Us" link_item="/contact" />
             </div>
           </div>
