@@ -1,5 +1,4 @@
 import React from "react";
-import LogoLight from "../assets/images/logo/podii_logo_light.svg";
 import { Link } from "react-router";
 import { MdPhone } from "react-icons/md";
 import { IoMdMail } from "react-icons/io";
