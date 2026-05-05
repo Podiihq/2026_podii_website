@@ -32,8 +32,8 @@ const Footer = () => {
               Social Links
             </p>
             <div>
-              <FooterLink title="X (Twitter)" link_item="#" />
-              <FooterLink title="linkedin" link_item="#" />
+              <FooterLink title="X (Twitter)" link_item="https://x.com/podiihq" />
+              <FooterLink title="linkedin" link_item="https://www.linkedin.com/company/podiihq/" />
               <FooterLink title="Facebook" link_item="#" />
             </div>
           </div>
