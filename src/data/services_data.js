@@ -91,8 +91,8 @@ export const service_data = [
     service_project: [
       {
         project_image: "/images/others/placeholder.png",
-        project_name: "Kisumu Water and Sanitation Company",
-        project_description: "Podii recovered more than KES 10 million in annual billing...",
+        project_name: "Vibrant Village Foundation: Platform Integration",
+        project_description: "Built three integrated program management systems enabling Vibrant Village...",
         project_link: "#",
         project_status: "Coming Soon"
       },
@@ -118,11 +118,11 @@ export const service_data = [
     service_project: [
       {
         project_image: "/images/others/placeholder.png",
-        project_name: "Kisumu Water and Sanitation Company",
-        project_description: "Podii recovered more than KES 10 million in annual billing...",
+        project_name: "Vibrant Village Foundation: Platform Integration",
+        project_description: "Built three integrated program management systems enabling Vibrant Village...",
         project_link: "#",
         project_status: "Coming Soon"
-      }
+      },
     ]
   },
   {

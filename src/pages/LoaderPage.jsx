@@ -28,30 +28,66 @@ const LoaderPage = ({ onComplete }) => {
     ];
 
     useEffect(() => {
-        if (assets.length === 0) {
-            setIsComplete(true);
-            return;
-        }
+        const fontPromises = [
+            document.fonts.load("130px 'MangoGrotesque'"),
+            document.fonts.load("100px 'MangoGrotesque'"),
+            document.fonts.load("80px 'MangoGrotesque'"),
+            document.fonts.load("70px 'MangoGrotesque'"),
+        ];
+
+        const imagePromises = assets.map((src) => {
+            return new Promise((resolve) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = resolve;
+                img.onerror = resolve;
+            });
+        });
+
+        const allAssets = [...imagePromises, ...fontPromises];
 
         let loaded = 0;
 
         const updateProgress = () => {
             loaded++;
-            const percent = Math.round((loaded / assets.length) * 100);
+            const percent = Math.round((loaded / allAssets.length) * 100);
             setRealProgress(percent);
 
-            if (loaded === assets.length) {
+            if (loaded === allAssets.length) {
                 setIsComplete(true);
             }
         };
 
-        assets.forEach((src) => {
-            const img = new Image();
-            img.src = src;
-            img.onload = updateProgress;
-            img.onerror = updateProgress;
+        allAssets.forEach((promise) => {
+            promise.then(updateProgress);
         });
     }, []);
+
+    // useEffect(() => {
+    //     if (assets.length === 0) {
+    //         setIsComplete(true);
+    //         return;
+    //     }
+
+    //     let loaded = 0;
+
+    //     const updateProgress = () => {
+    //         loaded++;
+    //         const percent = Math.round((loaded / assets.length) * 100);
+    //         setRealProgress(percent);
+
+    //         if (loaded === assets.length) {
+    //             setIsComplete(true);
+    //         }
+    //     };
+
+    //     assets.forEach((src) => {
+    //         const img = new Image();
+    //         img.src = src;
+    //         img.onload = updateProgress;
+    //         img.onerror = updateProgress;
+    //     });
+    // }, []);
 
     useEffect(() => {
         const controls = animate(progress, realProgress, {
@@ -81,7 +117,7 @@ const LoaderPage = ({ onComplete }) => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
         >
-            <div className="w-full max-w-lg px-6 space-y-5">
+            <div className="w-full max-w-sm px-6 space-y-5">
                 <div className="flex items-center justify-center gap-4 pt-10">
                     <img src={LogoIcon} alt="" className="" />
                 </div>
