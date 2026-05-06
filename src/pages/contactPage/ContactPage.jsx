@@ -158,7 +158,7 @@ const ContactPage = () => {
                                                     name="userName"
                                                     placeholder="John Doe*"
                                                     autoComplete="given-name"
-                                                    className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc]"
+                                                    className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc] bg-white"
                                                     value={formData.userName}
                                                     onChange={handleChange}
                                                 />
@@ -175,7 +175,7 @@ const ContactPage = () => {
                                                 id="email"
                                                 placeholder="email@email.com*"
                                                 autoComplete="given-name"
-                                                className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc]"
+                                                className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc] bg-white"
                                                 value={formData.email}
                                                 onChange={handleChange}
                                                 data-text-animation
@@ -192,7 +192,7 @@ const ContactPage = () => {
                                                 id="country"
                                                 placeholder="Kenya"
                                                 autoComplete="given-name"
-                                                className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc]"
+                                                className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc] bg-white"
                                                 value={formData.country}
                                                 onChange={handleChange}
                                                 data-text-animation
@@ -246,7 +246,7 @@ const ContactPage = () => {
                                                 placeholder="Type something here..."
                                                 name="other"
                                                 rows="5"
-                                                className="block w-full border border-dashed py-1.5 px-1.5 text-gray-900 placeholder:text-[#ccc]"
+                                                className="block w-full bg-white border border-dashed py-1.5 px-1.5 text-gray-900 placeholder:text-[#ccc]"
                                                 value={formData.other}
                                                 onChange={handleChange}
                                             ></textarea>
@@ -260,7 +260,7 @@ const ContactPage = () => {
                                             id="budget"
                                             required
                                             name="budget"
-                                            className="px-2 p-3 w-full border border-dashed bg-transparent"
+                                            className="px-2 p-3 w-full border border-dashed bg-white"
                                             value={formData.budget}
                                             onChange={handleChange}
                                             data-text-animation
@@ -268,9 +268,9 @@ const ContactPage = () => {
                                             <option value="" disabled selected className="text-gray-400">
                                                 Select your budget range
                                             </option>
-                                            <option value="$20,000 and above" className=''>$20,000 and above</option>
-                                            <option value="$10,000" className=''>$10,000</option>
-                                            <option value="$5000 and below" className=''>$5000 and below</option>
+                                            <option value="$50,000 and above">$50,000 and above</option>
+                                            <option value="$10,000 to $50,000">$10,000 to $50,000</option>
+                                            <option value="$10,000 and below">$10,000 and below</option>
                                         </select>
                                         {errors.budget && <div className="error-message text-[#C8420B]">{errors.budget}</div>}
                                     </div>
