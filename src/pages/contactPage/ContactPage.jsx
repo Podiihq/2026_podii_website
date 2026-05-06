@@ -13,6 +13,7 @@ const ContactPage = () => {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [success, setSuccess] = useState(false);
+    const [robotChallenge, setRobotChallenge] = useState({ first: 0, second: 0, answer: 0 });
 
 
     useEffect(() => {
@@ -43,8 +44,21 @@ const ContactPage = () => {
         budget: '',
         other: '',
         services: [],
+        isRobot: false,
+        robotAnswer: '',
+        website: '',
     });
 
+
+    const generateRobotChallenge = () => {
+        const first = Math.floor(Math.random() * 8) + 2;
+        const second = Math.floor(Math.random() * 8) + 2;
+        setRobotChallenge({ first, second, answer: first + second });
+    };
+
+    useEffect(() => {
+        generateRobotChallenge();
+    }, []);
 
 
     const validateEmail = (email) => {
@@ -55,6 +69,10 @@ const ContactPage = () => {
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         if (type === 'checkbox') {
+            if (name === 'isRobot') {
+                setFormData((prevData) => ({ ...prevData, isRobot: checked }));
+                return;
+            }
             setFormData((prevData) => {
                 const newServices = checked
                     ? [...prevData.services, value]
@@ -80,6 +98,13 @@ const ContactPage = () => {
         }
         if (!formData.budget) formErrors.budget = 'Budget is a required field.';
         if (formData.services.length === 0) formErrors.services = 'Select at least one option.';
+        if (!formData.isRobot) formErrors.isRobot = 'Please confirm "I am a robot" before submitting.';
+        if (formData.website.trim()) formErrors.botCheck = 'Bot activity detected.';
+        if (!formData.robotAnswer.trim()) {
+            formErrors.robotAnswer = 'Please fill in the verification answer.';
+        } else if (Number(formData.robotAnswer) !== robotChallenge.answer) {
+            formErrors.robotAnswer = 'Please solve the verification question correctly.';
+        }
 
         setErrors(formErrors);
         return Object.keys(formErrors).length === 0;
@@ -115,7 +140,11 @@ const ContactPage = () => {
                     budget: '',
                     other: '',
                     services: [],
+                    isRobot: false,
+                    robotAnswer: '',
+                    website: '',
                 });
+                generateRobotChallenge();
                 setLoading(false);
                 setSuccess(true);
             })
@@ -276,15 +305,65 @@ const ContactPage = () => {
                                     </div>
 
                                     <div className="pt-4">
+                                        <div className="hidden" aria-hidden="true">
+                                            <label htmlFor="website">Website</label>
+                                            <input
+                                                type="text"
+                                                id="website"
+                                                name="website"
+                                                tabIndex="-1"
+                                                autoComplete="off"
+                                                value={formData.website}
+                                                onChange={handleChange}
+                                            />
+                                        </div>
+                                        <div className="pb-4">
+                                            <div className='flex items-center gap-3 border border-dashed border-[#ccc] p-2 bg-white'>
+                                                <div className='pt-1'>
+                                                    <input
+                                                        type="checkbox"
+                                                        id="isRobot"
+                                                        name="isRobot"
+                                                        className="w-6 h-6 bg-[#F5F5F5] focus:outline-none ring ring-[#1e1e1e] custom-cursor"
+                                                        checked={formData.isRobot}
+                                                        onChange={handleChange}
+                                                    />
+                                                </div>
+                                                <label htmlFor="isRobot" className="w-full font-bold">
+                                                    I am a robot? *
+                                                </label>
+                                            </div>
+                                            {errors.isRobot && <div className="error-message text-[#C8420B] mt-2">{errors.isRobot}</div>}
+                                        </div>
+                                        {formData.isRobot && (
+                                            <div className="pb-4 space-y-2">
+                                                <LabelComponent
+                                                    label_html="robotAnswer"
+                                                    label_title={`Verification: ${robotChallenge.first} + ${robotChallenge.second} = ? *`}
+                                                />
+                                                <input
+                                                    type="number"
+                                                    id="robotAnswer"
+                                                    name="robotAnswer"
+                                                    placeholder="Enter the answer"
+                                                    className="block w-full border border-dashed p-2 ring-inset placeholder:text-[#ccc] bg-white"
+                                                    value={formData.robotAnswer}
+                                                    onChange={handleChange}
+                                                />
+                                                {errors.robotAnswer && <div className="error-message text-[#C8420B]">{errors.robotAnswer}</div>}
+                                                {errors.botCheck && <div className="error-message text-[#C8420B]">{errors.botCheck}</div>}
+                                            </div>
+                                        )}
                                         <button
                                             type="submit"
                                             id="loaderButton"
+                                            disabled={!formData.isRobot || !formData.robotAnswer.trim() || loading}
                                             className="cursor-pointer rounded relative inline-flex items-center justify-center w-full px-6 py-6
                                             text-5xl leading-none lg:text-[50px] lg:leading-13
                                             font-medium transition duration-200 bg-[#C8420B] hover:bg-transparent border-2 border-[#1a1a1a] hover:border-[#1a1a1a]
                                             hover:-translate-x-2 hover:-translate-y-2 
                                             hover:rounded-md hover:shadow-[4px_4px_0px_black] active:translate-x-0 active:translate-y-0 
-                                            active:rounded-2xl active:shadow-none group"
+                                            active:rounded-2xl active:shadow-none group disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-none"
                                         >
                                             {loading ? "" :
                                                 <span id="buttonText" className='mango-black text-[#f5f5f5] group-hover:text-[#1a1a1a]'>SUBMIT</span>
