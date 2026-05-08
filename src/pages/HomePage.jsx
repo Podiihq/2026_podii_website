@@ -71,7 +71,7 @@ const HomePage = () => {
                 That’s a design problem.
               </motion.p>
               <motion.p className="lg:w-10/12" variants={fadeUp}>
-                We’re is the consultancy that diagnoses what is broken and builds what replaces it, so businesses can scale without the manual dependencies that cap their capacity.
+                We’re the consultancy that diagnoses what is broken and builds what replaces it, so businesses can scale without the manual dependencies that cap their capacity.
               </motion.p>
               <motion.div variants={fadeUp} className="group relative cursor-pointer border border-[#ccc] hover:bg-[#1a1a1a] border-dashed w-fit mt-5">
                 <BorderConers />
