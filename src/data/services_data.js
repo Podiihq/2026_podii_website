@@ -37,9 +37,9 @@ export const service_home_cards = [
     headingLines: "4. Consultancy",
     description:
       "Uncover the real causes behind operational issues, not just their symptoms. We run a full diagnostic—mapping your processes, identifying bottlenecks and dependencies, and pinpointing root causes—then deliver a clear, prioritised redesign roadmap before any code is written.",
-    moreClass: "lg:col-span-2",
-    flexType: "lg:flex-row lg:gap-10 lg:items-start",
-    image_class: "lg:w-250",
+    moreClass: "lg:col-span-1",
+    flexType: "flex-col",
+    image_class: "",
     shape: Image4
   },
 ];

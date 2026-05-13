@@ -13,7 +13,7 @@ const ServicesSection = () => (
       </h2>
     </div>
     <div className="mx-auto lg:mt-10 bg-brand-neutral relative">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
         {service_home_cards.map((card, index) => (
           <FeatureCard key={index} card={card} />
         ))}
@@ -38,29 +38,28 @@ export const DecorativeCorners = () => (
 
 const FeatureCard = ({ card }) => {
   return (
-    <section className={`relative flex border border-[#ccc] border-dashed flex-col p-6 md:p-7 ${card.moreClass}`}>
+    <section className={`relative border border-[#ccc] border-dashed p-6 md:p-7 h-full ${card.moreClass}`}>
       <BorderConers />
-      <div className={`relative z-10 h-full flex flex-col ${card.flexType}`}>
+      <div className={`relative z-10 h-full flex ${card.flexType}`}>
         <div className="">
           <img src={card.shape} alt="" className={`mx-auto w-1/2 md:w-auto h-full ${card.image_class}`} />
         </div>
         <div className="mt-4">
-          <h2 className="mb-6 text-2xl font-black">
+          <h2 className="mb-3 text-2xl font-black text-[#038585] lg:w-2/3">
             {card.headingLines}
           </h2>
-          <p className="mb-6 border-l-2 pl-3">
+          <p className="mb-3 border-l-2 pl-3 border-[#038585]">
             {card.description}
           </p>
-          <div className="flex-1" />
-          <div className="w-fit">
-            <Link to={`/services/#${card.id}`}
-              className="uppercase tracking-widest underline hover:text-[#ccc]"
-            >
-              Learn More
-            </Link>
-          </div>
         </div>
-
+        <div className="flex-1" />
+        <div className="w-fit pl-4">
+          <Link to={`/services/#${card.id}`}
+            className="uppercase underline hover:text-[#C8420B] text-sm font-bold"
+          >
+            Learn More
+          </Link>
+        </div>
       </div>
     </section>
   );

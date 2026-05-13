@@ -13,8 +13,8 @@ import { RiArrowRightUpLine } from 'react-icons/ri'
 const navigation = [
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
+    { label: "Case Studies", href: "/projects" },
     { label: "About us", href: "/about" },
-    { label: "Case Studies", href: "#" },
 ];
 
 const NavBar = ({ targetSectionRef }) => {
@@ -40,7 +40,7 @@ const NavBar = ({ targetSectionRef }) => {
 
     return (
         <section className="relative">
-            <header className="sticky top-0 mx-auto w-full max-w-7xl px-4 lg:px-0 z-50">
+            <header className="sticky top-0 mx-auto w-full max-w-7xl px-4 lg:px-0 z-50 shadow-2xl">
                 <div
                     className={`rounded-xs w-full flex items-center justify-between pl-4 pr-2 py-2 backdrop-blur transition-all duration-300 
                     ${isInSection

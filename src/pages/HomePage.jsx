@@ -76,10 +76,10 @@ const HomePage = () => {
               <motion.div variants={fadeUp} className="group relative cursor-pointer border border-[#ccc] hover:bg-[#1a1a1a] border-dashed w-fit mt-5">
                 <BorderConers />
                 <div className="px-4 py-3 space-y-1">
-                  <p className="text-[#666666] group-hover:text-[#f5f5f5] text-xs md:text-base">See how we  <span className="uppercase font-bold text-[#038585] group-hover:text-[#C8420B]">Recovered more than</span></p>
+                  <p className="text-[#666666] group-hover:text-[#f5f5f5] text-xs md:text-base">See how we  <span className="uppercase font-bold text-[#038585]">Recovered more than</span></p>
                   <div className="w-full flex justify-between items-end">
                     <p className="text-3xl lg:text-4xl xl:text-5xl dotSans-black text-[#C8420B] group-hover:text-[#C8420B] leading-none">KSH 10M</p>
-                    <RiArrowRightUpLine className='text-2xl text-[#038585] group-hover:text-[#C8420B]' />
+                    <RiArrowRightUpLine className='text-2xl text-[#038585]' />
                   </div>
                   <p className="text-[#666666] group-hover:text-[#f5f5f5] text-xs md:text-base">for KIWASCO within a year.</p>
                 </div>
@@ -107,10 +107,10 @@ const HomePage = () => {
                 <div className="flex flex-col border border-[#ccc] border-dashed rounded-xs p-6 relative lg:w-11/12">
                   <BorderConers />
                   <div className="">
-                    <h2 className="mb-6 text-xl md:text-2xl font-bold leading-none">
+                    <h2 className="mb-6 text-xl md:text-2xl font-bold leading-none text-[#038585]">
                       Podii exists to redesign that architecture.
                     </h2>
-                    <p className="mb-4 border-l-2 border-brand-primary pl-3 md:pl-6 leading-relaxed tracking-tight/70">
+                    <p className="mb-4 border-l-2 border-[#038585] pl-3 md:pl-6 leading-relaxed tracking-tight/70">
                       We work with businesses to map out their current process flows, while identifying bottleknecks and rebuilding their infrastructure from the ground up. We use the right data model, integration architecture and automation logic. Not just a layer on top of broken process.
                     </p>
                     <h2 className="md:indent-3 lg:indent-6 text-xl font-bold text-[#C8420B] leading-none">

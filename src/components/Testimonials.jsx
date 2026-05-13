@@ -7,6 +7,7 @@ import Tectona from "../assets/images/testimonial_logo/tectona.svg";
 import Sfractol from "../assets/images/testimonial_logo/sfractol.svg";
 import Groxio from "../assets/images/testimonial_logo/tectona.svg";
 import { IoChevronBackSharp, IoChevronForwardSharp } from "react-icons/io5";
+import { BorderConers } from "./BorderConers";
 
 const PAGE_SIZE = 3;
 
@@ -80,6 +81,7 @@ const TestimonialsComponent = () => {
         </div>
       </div>
       <div className="relative">
+        <BorderConers />
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={startIndex}
@@ -120,7 +122,7 @@ export const TestimonialsCard = ({
   company_logo,
 }) => {
   return (
-    <div className="p-6 mx-2">
+    <div className="p-3 lg:p-6 mx-2">
       <div className="space-y-6 items-start">
         <div className="flex items-start gap-5">
           <div>
@@ -141,6 +143,27 @@ export const TestimonialsCard = ({
 };
 
 const testimonial_data = [
+  {
+    userName: "Donald Odhiambo",
+    role: " CEO, Tectona Group",
+    description:
+      "The MEL platform developed by Podii has greatly contributed to the  ongoing digital transformation in the data, M&E, and project  management field. Their professionalism and expertise towards delivering quality product was quite impressive.",
+    company_logo: Tectona,
+  },
+  {
+    userName: "Duncan Sparrell",
+    role: "sFractal Consulting",
+    description:
+      "The team at Podii was efficient, effective, exceptional, and very  helpful in turning my vision into reality - a game to teach supply chain cybersecurity. And not just in the fun stuff of creating, but also in  the not-as-fun stuff like GitHub alerts, patches, and updating to stay  current. This is particularly important with today's ever-increasing  cyber threats.",
+    company_logo: Sfractol,
+  },
+  {
+    userName: "Bruce Tate",
+    role: " Managing Director, Groxio",
+    description:
+      "Working with Sigu and Podii is fantastic. He has the professional  skills. His projects always come in under budget and with good quality,  and interactions are respectful.",
+    company_logo: Groxio,
+  },
   {
     userName: "Donald Odhiambo",
     role: " CEO, Tectona Group",
